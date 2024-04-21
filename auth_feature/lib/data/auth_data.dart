@@ -80,7 +80,8 @@ Future<UserData> getUserData() async {
   user.email = box.get('email');
   user.first_name = box.get('first_name');
   user.last_name = box.get('last_name');
-  user.date_birth = DateTime.fromMillisecondsSinceEpoch(box.get('date_birth'));
+  user.date_birth =
+      DateTime.fromMillisecondsSinceEpoch(box.get('date_birth') * 1000);
   user.password = box.get('password');
   user.accessToken = box.get('accessToken');
   return user;
