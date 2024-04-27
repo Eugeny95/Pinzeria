@@ -14,7 +14,7 @@ class OrderRepository {
     try {
       print(orderHttpModel.toJson());
       Response responce = await Dio().post(
-          'http://91.222.236.176:8880/orders/order/',
+          'http://147.45.109.158:8881/orders/order/',
           data: orderHttpModel.toJson(),
           options: Options(headers: <String, String>{
             'authorization': 'Bearer ${accessToken}'

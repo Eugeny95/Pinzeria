@@ -2,8 +2,8 @@ import 'package:data_layer/models/db_models/history_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:valentino/ui/constants.dart';
-import 'package:valentino/ui/store_page/components/position_string.dart';
+import 'package:pinzeria/ui/constants.dart';
+import 'package:pinzeria/ui/store_page/components/position_string.dart';
 
 class HistoryPreview extends StatefulWidget {
   HistoryDbModel historyDbModel;
@@ -39,7 +39,7 @@ class _HistoryPreviewState extends State<HistoryPreview> {
                   bottomRight: Radius.circular(15),
                   bottomLeft: Radius.circular(15))),
           elevation: 20,
-          color: Color.fromARGB(255, 79, 102, 59),
+          color: Color.fromARGB(205, 140, 116, 71),
           child: Column(children: [
             SizedBox(
               height: height * 0.003,
@@ -50,7 +50,7 @@ class _HistoryPreviewState extends State<HistoryPreview> {
                 Container(
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(148, 0, 0, 0),
+                    color: Color.fromARGB(230, 254, 249, 239),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   // color: Colors.red,
@@ -60,7 +60,7 @@ class _HistoryPreviewState extends State<HistoryPreview> {
                         width: width * 0.02,
                       ),
                       Expanded(
-                        flex: 5,
+                        flex: 3,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -79,6 +79,7 @@ class _HistoryPreviewState extends State<HistoryPreview> {
                                   // ${orderObject!.ids}
 
                                   style: TextStyle(
+                                      color: Color.fromARGB(232, 50, 50, 50),
                                       fontSize: 22,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -96,7 +97,9 @@ class _HistoryPreviewState extends State<HistoryPreview> {
                               // ${orderObject!.ids}
 
                               style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold),
+                                  color: Color.fromARGB(232, 50, 50, 50),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
@@ -107,7 +110,7 @@ class _HistoryPreviewState extends State<HistoryPreview> {
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage(
-                                  "assets/VB.png",
+                                  "assets/PinBon.png",
                                 ),
                                 // opacity: 0.60,
                                 fit: BoxFit.cover,

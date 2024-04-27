@@ -1,4 +1,4 @@
-package com.yappa.valentino
+package com.yappa.pinzeria
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -14,7 +14,7 @@ void main() {
 
     AuthStatus status = await AuthService().register(
         userData: user,
-        registerUrl: 'http://91.222.236.176:8880/auth/register/');
+        registerUrl: 'http://147.45.109.158:8881/auth/register/');
     print(status);
   });
 
@@ -28,7 +28,7 @@ void main() {
         password: user.password,
         deviceType: '',
         message_service_token: '',
-        authUrl: 'http://91.222.236.176:8880/auth/login/');
+        authUrl: 'http://147.45.109.158:8881/auth/login/');
     print(user.authStatus);
     print(user.accessToken);
   });

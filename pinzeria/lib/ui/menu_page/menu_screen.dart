@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:valentino/buisiness/menu_page_bloc/menu_bloc/menu_bloc.dart';
-import 'package:valentino/buisiness/menu_page_bloc/select_category_bloc/bloc/select_category_bloc.dart';
-import 'package:valentino/ui/constants.dart';
-import 'package:valentino/ui/menu_page/components/carousel.dart';
-import 'package:valentino/ui/menu_page/components/menu_card.dart';
-import 'package:valentino/ui/menu_page/components/table_dialog.dart';
+import 'package:pinzeria/buisiness/menu_page_bloc/menu_bloc/menu_bloc.dart';
+import 'package:pinzeria/buisiness/menu_page_bloc/select_category_bloc/bloc/select_category_bloc.dart';
+import 'package:pinzeria/ui/constants.dart';
+import 'package:pinzeria/ui/menu_page/components/carousel.dart';
+import 'package:pinzeria/ui/menu_page/components/menu_card.dart';
+import 'package:pinzeria/ui/menu_page/components/table_dialog.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class MenuPage extends StatefulWidget {
@@ -122,12 +122,13 @@ class _MenuPageState extends State<MenuPage> {
                   // ),
                 ])),
             SliverAppBar(
-              // backgroundColor: kPrimaryColor.withOpacity(0.9),
+              // backgroundColor: Colors.transparent,
               toolbarHeight: 12,
               pinned: true,
               snap: false,
               floating: false,
               flexibleSpace: Container(
+                color: kContentColorLightTheme,
                 child: ListView(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
@@ -152,8 +153,8 @@ class _MenuPageState extends State<MenuPage> {
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: (index ==
                                                 stateCategory.selectedIndex)
-                                            ? kPrimaryColor.withOpacity(0.95)
-                                            : kPrimaryColor.withOpacity(0.4),
+                                            ? kPrimaryColor
+                                            : kPrimaryColor.withOpacity(0.6),
                                         minimumSize:
                                             Size(height * 0.12, width * 0.25),
                                         shape: RoundedRectangleBorder(
@@ -178,10 +179,10 @@ class _MenuPageState extends State<MenuPage> {
                                               .toString(),
                                           style: const TextStyle(
                                               // fontFamily: 'Moniqa',
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 13,
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 12,
                                               color: Color.fromARGB(
-                                                  205, 48, 48, 48))),
+                                                  228, 218, 58, 47))),
                                     ),
                                   );
                                 });

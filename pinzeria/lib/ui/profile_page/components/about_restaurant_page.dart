@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:valentino/ui/constants.dart';
-import 'package:valentino/ui/menu_page/components/table_dialog.dart';
+import 'package:pinzeria/ui/constants.dart';
+import 'package:pinzeria/ui/menu_page/components/table_dialog.dart';
 
 class AboutRestaurantPage extends StatefulWidget {
   @override
@@ -38,7 +38,7 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
                 ),
                 Padding(padding: EdgeInsets.only(top: 5)),
                 Text(
-                  'Valentino? Да!',
+                  'pinzeria? Да!',
                   style: TextStyle(
                     fontSize: 14,
                   ),
@@ -52,7 +52,7 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
                 ),
                 Padding(padding: EdgeInsets.only(top: 20)),
                 Text(
-                  'Каждое блюдо приготовлено с соблюдением авторских технологий и не оставляет никого равнодушным. Уютное пространство, верность качеству, лучшие ингредиенты, итальянская щедрость и радушие - создают неповторимую атмосферу заведения, в котором хочется, чтобы время остановилось.Valentino? Да!',
+                  'Каждое блюдо приготовлено с соблюдением авторских технологий и не оставляет никого равнодушным. Уютное пространство, верность качеству, лучшие ингредиенты, итальянская щедрость и радушие - создают неповторимую атмосферу заведения, в котором хочется, чтобы время остановилось.pinzeria? Да!',
                   style: TextStyle(
                     fontSize: 14,
                   ),
@@ -97,7 +97,7 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
                   style: TextStyle(fontSize: 60, fontFamily: 'Moniqa'),
                 ),
                 Text(
-                  'Валентино Бонтемпи \n (Valentino Bontempi)',
+                  'Валентино Бонтемпи \n (pinzeria Bontempi)',
                   style: TextStyle(
                       fontSize: 20,
                       fontFamily: 'Moniqa',
@@ -117,7 +117,7 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
                       child: CachedNetworkImage(
                           filterQuality: FilterQuality.low,
                           imageUrl:
-                              'https://valentino-vrn.ru/upload/iblock/26f/zp74zkpwkxbfybi9o1cn3imo1k52oex0.jpg',
+                              'https://pinzeria-vrn.ru/upload/iblock/26f/zp74zkpwkxbfybi9o1cn3imo1k52oex0.jpg',
                           fit: BoxFit.cover),
                     ),
                   ),

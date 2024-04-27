@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
-import 'package:valentino/ui/constants.dart';
+import 'package:pinzeria/ui/constants.dart';
 
 // as datetimepic;
 

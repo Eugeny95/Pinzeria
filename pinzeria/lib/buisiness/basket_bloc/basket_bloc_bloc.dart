@@ -6,7 +6,7 @@ import 'package:data_layer/models/http_models/order_http_model.dart';
 import 'package:data_layer/models/http_models/position_http_model.dart';
 import 'package:data_layer/network/order_repository.dart';
 import 'package:meta/meta.dart';
-import 'package:valentino/ui/basket_page/data/models.dart';
+import 'package:pinzeria/ui/basket_page/data/models.dart';
 part 'basket_bloc_event.dart';
 part 'basket_bloc_state.dart';
 

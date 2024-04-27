@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:valentino/buisiness/auth_bloc/auth_bloc.dart';
-import 'package:valentino/buisiness/basket_bloc/basket_bloc_bloc.dart';
-import 'package:valentino/buisiness/history_bloc/history_bloc.dart';
-import 'package:valentino/buisiness/menu_page_bloc/menu_bloc/menu_bloc.dart';
-import 'package:valentino/buisiness/menu_page_bloc/select_category_bloc/bloc/select_category_bloc.dart';
-import 'package:valentino/generated/l10n.dart';
-import 'package:valentino/ui/constants.dart';
-import 'package:valentino/ui/menu_page/menu_screen.dart';
-import 'package:valentino/ui/profile_page/profile_page.dart';
-import 'package:valentino/ui/store_page/store_page.dart';
-import 'package:valentino/ui/theme.dart';
+import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
+import 'package:pinzeria/buisiness/basket_bloc/basket_bloc_bloc.dart';
+import 'package:pinzeria/buisiness/history_bloc/history_bloc.dart';
+import 'package:pinzeria/buisiness/menu_page_bloc/menu_bloc/menu_bloc.dart';
+import 'package:pinzeria/buisiness/menu_page_bloc/select_category_bloc/bloc/select_category_bloc.dart';
+import 'package:pinzeria/generated/l10n.dart';
+import 'package:pinzeria/ui/constants.dart';
+import 'package:pinzeria/ui/menu_page/menu_screen.dart';
+import 'package:pinzeria/ui/profile_page/profile_page.dart';
+import 'package:pinzeria/ui/store_page/store_page.dart';
+import 'package:pinzeria/ui/theme.dart';
 
 import 'package:badges/badges.dart' as badges;
 

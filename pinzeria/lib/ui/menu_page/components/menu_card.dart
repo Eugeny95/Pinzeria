@@ -2,11 +2,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:data_layer/models/http_models/dish_http_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:valentino/buisiness/auth_bloc/auth_bloc.dart';
-import 'package:valentino/buisiness/basket_bloc/basket_bloc_bloc.dart';
-import 'package:valentino/ui/constants.dart';
+import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
+import 'package:pinzeria/buisiness/basket_bloc/basket_bloc_bloc.dart';
+import 'package:pinzeria/ui/constants.dart';
 
-import 'package:valentino/ui/menu_page/components/select_dish_dialog.dart';
+import 'package:pinzeria/ui/menu_page/components/select_dish_dialog.dart';
 
 class MenuCategoryItem extends StatelessWidget {
   const MenuCategoryItem({
@@ -97,10 +97,18 @@ class MenuCard extends StatelessWidget {
             padding: const EdgeInsets.only(top: 4.0),
             margin: const EdgeInsets.symmetric(horizontal: 1, vertical: 1),
             decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 1,
+                    blurRadius: 4,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
                 border:
                     Border.all(width: 2, color: Color.fromARGB(74, 88, 88, 88)),
                 borderRadius: BorderRadius.circular(15.0),
-                color: kThirdColor),
+                color: Color.fromARGB(255, 251, 239, 234)),
             child: Column(children: [
               Container(
                 width: width / 2.4,
@@ -187,7 +195,7 @@ class MenuCard extends StatelessWidget {
                   ),
                   (dishHttpModel.energyFullAmount != 0)
                       ? const Icon(Icons.circle,
-                          size: 4, color: Color.fromARGB(189, 255, 255, 255))
+                          size: 4, color: Color.fromARGB(188, 49, 49, 49))
                       : Container(),
                   // Энергетическая ценность
                   (dishHttpModel.weight != 0)
@@ -211,8 +219,8 @@ class MenuCard extends StatelessWidget {
                 height: height / 22,
                 decoration: BoxDecoration(
                   border: Border.all(
-                      width: 1, color: Color.fromARGB(246, 88, 88, 88)),
-                  color: const Color.fromARGB(255, 246, 246, 246),
+                      width: 1, color: Color.fromARGB(108, 88, 88, 88)),
+                  color: Color.fromARGB(255, 243, 243, 243),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: Center(

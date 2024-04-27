@@ -21,7 +21,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         deviceType: '',
         username: username,
         password: password,
-        authUrl: 'http://91.222.236.176:8880/auth/login/');
+        authUrl: 'http://147.45.109.158:8881/auth/login/');
     return authStatus;
   }
 
@@ -29,7 +29,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     print('register user');
     authStatus = await authService.register(
         userData: userData,
-        registerUrl: 'http://91.222.236.176:8880/auth/register/');
+        registerUrl: 'http://147.45.109.158:8881/auth/register/');
     return authStatus;
   }
 
@@ -66,7 +66,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           deviceType: '',
           username: event.username,
           password: event.password,
-          authUrl: 'http://91.222.236.176:8880/auth/login/');
+          authUrl: 'http://147.45.109.158:8881/auth/login/');
       emit(AuthState(status: authStatus, user: authService.user));
     });
 

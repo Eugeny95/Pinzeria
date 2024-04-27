@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:url_launcher/url_launcher.dart';
-import 'package:valentino/ui/constants.dart';
+import 'package:pinzeria/ui/constants.dart';
 
 class AboutWidget extends StatelessWidget {
   @override
@@ -80,7 +80,7 @@ class AboutWidget extends StatelessWidget {
                                         ),
                                         onTap: () async {
                                           final url =
-                                              "https://yandex.ru/maps/org/valentino/124027389896/?ll=39.198355%2C51.660954&z=15";
+                                              "https://yandex.ru/maps/org/pinzeria/124027389896/?ll=39.198355%2C51.660954&z=15";
                                           if (await canLaunch(url)) {
                                             await launch(
                                               url,

@@ -2,15 +2,15 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:valentino/ui/constants.dart';
-import 'package:valentino/ui/menu_page/components/table_dialog.dart';
+import 'package:pinzeria/ui/constants.dart';
+import 'package:pinzeria/ui/menu_page/components/table_dialog.dart';
 
 final List<String> imgList = [
-  'http://91.222.236.176:8880/image/image/home_1.jpg',
-  'http://91.222.236.176:8880/image/image/home_2.jpg',
-  'http://91.222.236.176:8880/image/image/home_3.jpg',
-  'http://91.222.236.176:8880/image/image/home_4.jpg',
-  'http://91.222.236.176:8880/image/image/home_5.jpg'
+  'http://147.45.109.158:8881/image/image/home_1.jpg',
+  'http://147.45.109.158:8881/image/image/home_2.jpg',
+  'http://147.45.109.158:8881/image/image/home_3.jpg',
+  'http://147.45.109.158:8881/image/image/home_4.jpg',
+  'http://147.45.109.158:8881/image/image/home_5.jpg'
 ];
 
 final List<Widget> imageSliders = imgList
@@ -64,7 +64,7 @@ class Cerousel extends StatelessWidget {
     return Scaffold(
       // backgroundColor: kPrimaryColor.withOpacity(0.9),
       appBar: AppBar(
-        backgroundColor: kPrimaryColor,
+        backgroundColor: Color.fromARGB(255, 252, 241, 232),
         toolbarHeight: height * 0.07,
         actions: [
           FloatingActionButton.small(
@@ -84,7 +84,7 @@ class Cerousel extends StatelessWidget {
             ),
             shape: RoundedRectangleBorder(
                 side: BorderSide(
-                    width: 1, color: Color.fromARGB(49, 255, 255, 255)),
+                    width: 2, color: Color.fromARGB(49, 255, 255, 255)),
                 borderRadius: BorderRadius.circular(100)),
           ),
         ],

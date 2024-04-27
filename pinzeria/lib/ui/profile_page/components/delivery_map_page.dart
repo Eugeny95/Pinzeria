@@ -4,9 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:valentino/buisiness/auth_bloc/auth_bloc.dart';
-import 'package:valentino/ui/auth_page/signin_or_signup_screen.dart';
-import 'package:valentino/ui/constants.dart';
+import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
+import 'package:pinzeria/ui/auth_page/signin_or_signup_screen.dart';
+import 'package:pinzeria/ui/constants.dart';
 
 class DeliveryMapPage extends StatefulWidget {
   @override

@@ -9,13 +9,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_payments/acquiring.dart';
 import 'package:online_payments/payment_widget.dart';
 import 'package:toggle_switch/toggle_switch.dart';
-import 'package:valentino/buisiness/auth_bloc/auth_bloc.dart';
-import 'package:valentino/buisiness/basket_bloc/basket_bloc_bloc.dart';
-import 'package:valentino/buisiness/history_bloc/history_bloc.dart';
-import 'package:valentino/ui/basket_page/address_widget.dart';
-import 'package:valentino/ui/basket_page/data/models.dart';
-import 'package:valentino/ui/basket_page/payment_widget_bottom.dart';
-import 'package:valentino/ui/constants.dart';
+import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
+import 'package:pinzeria/buisiness/basket_bloc/basket_bloc_bloc.dart';
+import 'package:pinzeria/buisiness/history_bloc/history_bloc.dart';
+import 'package:pinzeria/ui/basket_page/address_widget.dart';
+import 'package:pinzeria/ui/basket_page/data/models.dart';
+import 'package:pinzeria/ui/basket_page/payment_widget_bottom.dart';
+import 'package:pinzeria/ui/constants.dart';
 
 class BasketPage extends StatefulWidget {
   @override
@@ -63,11 +63,11 @@ class BasketPageState extends State<BasketPage> {
           userName: 'p3662276447-api',
           password: '9174253qQ@',
           returnUrl:
-              'http://91.222.236.176:8880/static/payment/payment_done.html',
+              'http://147.45.109.158:8881/static/payment/payment_done.html',
           token: 'q0dudue2frtnr8v1tpd5rv0udj',
           pageView: PageViewVariants.MOBILE,
           failUrl:
-              'http://91.222.236.176:8880/static/payment/payment_cancel.html');
+              'http://147.45.109.158:8881/static/payment/payment_cancel.html');
       // Оплата
       PaymentObject paymentObject = await sberAquiring.toPay(
           amount: (BlocProvider.of<BasketBloc>(context).getTotalCost() * 100)
@@ -154,12 +154,10 @@ class BasketPageState extends State<BasketPage> {
 
     return Scaffold(
       appBar: AppBar(
-          iconTheme:
-              IconThemeData(color: const Color.fromARGB(180, 253, 253, 253)),
+          iconTheme: IconThemeData(color: Color.fromARGB(180, 0, 0, 0)),
           backgroundColor: kPrimaryColor,
           title: Text('Оформление заказа',
-              style:
-                  TextStyle(color: const Color.fromARGB(202, 255, 255, 255)))),
+              style: TextStyle(color: Color.fromARGB(201, 20, 20, 20)))),
       body: BlocBuilder<BasketBloc, BasketState>(
         builder: (context, state) {
           final _formKey = GlobalKey<FormState>();
@@ -174,14 +172,17 @@ class BasketPageState extends State<BasketPage> {
                         width: width * 0.99,
                         child: Card(
                             elevation: 15,
-                            color: Color.fromARGB(191, 21, 33, 17),
+                            color: Color.fromARGB(255, 255, 255, 238),
                             child: Column(
                               children: [
                                 const ListTile(
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(10))),
-                                  title: Text('Детали заказа'),
+                                  title: Text(
+                                    'Детали заказа',
+                                    style: TextStyle(color: Colors.black87),
+                                  ),
                                   tileColor: kPrimaryColor,
                                 ),
                                 const SizedBox(
@@ -209,9 +210,9 @@ class BasketPageState extends State<BasketPage> {
                                                       height: height * 0.1,
                                                       width: width * 0.25,
                                                       decoration: BoxDecoration(
-                                                          color: Colors.black54,
+                                                          color: Colors.white,
                                                           border: Border.all(
-                                                              width: 2,
+                                                              width: 1,
                                                               color: const Color
                                                                   .fromARGB(211,
                                                                   45, 45, 45)),
@@ -268,10 +269,10 @@ class BasketPageState extends State<BasketPage> {
                                                                           FontWeight
                                                                               .bold,
                                                                       color: Color.fromARGB(
-                                                                          255,
-                                                                          229,
-                                                                          229,
-                                                                          229),
+                                                                          233,
+                                                                          69,
+                                                                          69,
+                                                                          69),
                                                                       fontSize:
                                                                           14)),
                                                             ),
@@ -314,9 +315,9 @@ class BasketPageState extends State<BasketPage> {
                                                                     style: TextStyle(
                                                                         color: Color.fromARGB(
                                                                             255,
-                                                                            229,
-                                                                            229,
-                                                                            229),
+                                                                            54,
+                                                                            54,
+                                                                            54),
                                                                         fontSize:
                                                                             18),
                                                                   ),
@@ -350,10 +351,10 @@ class BasketPageState extends State<BasketPage> {
                                                               style: TextStyle(
                                                                   color: Color
                                                                       .fromARGB(
-                                                                          255,
-                                                                          229,
-                                                                          229,
-                                                                          229),
+                                                                          225,
+                                                                          58,
+                                                                          58,
+                                                                          58),
                                                                   fontSize: 18),
                                                             ),
                                                           ),
@@ -367,7 +368,7 @@ class BasketPageState extends State<BasketPage> {
                                                 ),
                                                 Divider(
                                                     color: Color.fromARGB(
-                                                        255, 229, 229, 229)),
+                                                        196, 45, 45, 45)),
                                               ],
                                             ),
                                           );
@@ -377,9 +378,11 @@ class BasketPageState extends State<BasketPage> {
                                 ToggleSwitch(
                                   minWidth: 150,
                                   cornerRadius: 20,
-                                  activeBgColor: [kPrimaryColor],
+                                  activeBgColor: [
+                                    kFourthColor.withOpacity(0.8)
+                                  ],
                                   inactiveBgColor:
-                                      const Color.fromARGB(255, 91, 91, 91),
+                                      Color.fromARGB(113, 91, 91, 91),
                                   inactiveFgColor: Colors.white,
                                   initialLabelIndex: toggleIndex,
                                   totalSwitches: 2,
@@ -405,7 +408,7 @@ class BasketPageState extends State<BasketPage> {
                                     });
                                   },
                                 ),
-                                Divider(color: Color.fromARGB(255, 67, 67, 67)),
+                                Divider(color: Color.fromARGB(182, 67, 67, 67)),
                                 Align(
                                     alignment: Alignment
                                         .center, //or choose another Alignment
@@ -437,8 +440,7 @@ class BasketPageState extends State<BasketPage> {
 
                                   textCapitalization:
                                       TextCapitalization.sentences,
-                                  cursorColor:
-                                      Color.fromARGB(139, 255, 255, 255),
+                                  cursorColor: Color.fromARGB(194, 42, 42, 42),
                                   // validator: (value) => Validator.isEmptyValid(value!),
                                   onChanged: (String value) {
                                     comment = value;
@@ -452,17 +454,25 @@ class BasketPageState extends State<BasketPage> {
                                               BorderRadius.circular(10),
                                           borderSide: const BorderSide(
                                               color: Color.fromARGB(
-                                                  139, 255, 255, 255),
-                                              width: 2.0)),
+                                                  160, 24, 24, 24),
+                                              width: 1.0)),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide(
+                                          color:
+                                              Color.fromARGB(172, 29, 29, 29),
+                                          width: 1.0,
+                                        ),
+                                      ),
                                       prefixIcon: const Icon(Icons.comment,
                                           size: 20,
-                                          color: Color.fromARGB(
-                                              211, 255, 255, 255)),
+                                          color:
+                                              Color.fromARGB(210, 45, 45, 45)),
                                       labelText: 'Комментарий к заказу',
                                       labelStyle: const TextStyle(
                                           fontSize: 12,
-                                          color: Color.fromARGB(
-                                              205, 255, 255, 255))),
+                                          color:
+                                              Color.fromARGB(205, 32, 32, 32))),
                                 ),
                                 Padding(
                                     padding:
@@ -478,7 +488,7 @@ class BasketPageState extends State<BasketPage> {
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 color: Color.fromARGB(
-                                                    255, 229, 229, 229),
+                                                    255, 47, 47, 47),
                                                 fontSize: 12),
                                           ),
                                           Row(
@@ -490,7 +500,7 @@ class BasketPageState extends State<BasketPage> {
                                                 style: const TextStyle(
                                                     fontWeight: FontWeight.bold,
                                                     color: Color.fromARGB(
-                                                        255, 229, 229, 229),
+                                                        226, 53, 53, 53),
                                                     fontSize: 20),
                                               ),
                                               const Text(
@@ -498,7 +508,7 @@ class BasketPageState extends State<BasketPage> {
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.bold,
                                                     color: Color.fromARGB(
-                                                        255, 229, 229, 229),
+                                                        239, 73, 73, 73),
                                                     fontSize: 15),
                                               ),
                                             ],

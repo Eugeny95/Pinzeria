@@ -5,10 +5,10 @@ import 'package:data_layer/models/http_models/dish_http_model.dart';
 import 'package:easy_image_viewer/easy_image_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:valentino/buisiness/auth_bloc/auth_bloc.dart';
-import 'package:valentino/buisiness/basket_bloc/basket_bloc_bloc.dart';
-import 'package:valentino/ui/constants.dart';
-import 'package:valentino/ui/menu_page/components/helper_dialog.dart';
+import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
+import 'package:pinzeria/buisiness/basket_bloc/basket_bloc_bloc.dart';
+import 'package:pinzeria/ui/constants.dart';
+import 'package:pinzeria/ui/menu_page/components/helper_dialog.dart';
 
 // TODO можно в будущем сделать категории подгружаемыми с интернета
 
@@ -84,7 +84,7 @@ class SelectDishDialogState extends State<SelectDishDialog> {
     return AlertDialog(
         contentPadding: EdgeInsets.all(10),
         insetPadding: const EdgeInsets.all(20),
-        backgroundColor: kPrimaryColor,
+        backgroundColor: Color.fromARGB(255, 255, 248, 240),
         actionsAlignment: MainAxisAlignment.start,
         content: SizedBox(
           //  height: height * 0.9,
@@ -103,7 +103,7 @@ class SelectDishDialogState extends State<SelectDishDialog> {
                   decoration: BoxDecoration(
                       color: Colors.black54,
                       border: Border.all(
-                          width: 2,
+                          width: 1,
                           color: const Color.fromARGB(211, 45, 45, 45)),
                       borderRadius: BorderRadius.circular(20.0)),
                   child: ClipRRect(
@@ -432,10 +432,11 @@ class SelectDishDialogState extends State<SelectDishDialog> {
                         backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
+
                           // side: BorderSide(color: kFourthColor, width: 2)
                           // <-- Radius
                         ),
-                        elevation: 5,
+                        elevation: 8,
                         minimumSize: Size(height * 0.35, width * 0.12),
                       ),
                       onPressed: () {

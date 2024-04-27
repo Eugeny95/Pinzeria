@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:valentino/ui/basket_page/data/models.dart';
+import 'package:pinzeria/ui/basket_page/data/models.dart';
 import 'package:yandex_autocomplete/models/result_object.dart';
 import 'package:yandex_autocomplete/network/place_coder.dart';
 
@@ -258,7 +258,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                                       };
                                       print('address: ${data}');
                                       Response response = await Dio().post(
-                                          'http://91.222.236.176:8880/orders_info/get_area_delivery/',
+                                          'http://147.45.109.158:8881/orders_info/get_area_delivery/',
                                           data: {
                                             "x": locations[0].latitude,
                                             "y": locations[0].longitude

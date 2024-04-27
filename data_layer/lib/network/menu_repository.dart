@@ -8,7 +8,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 class MenuRepository {
   Future<MenuHttpModel> syncMenu() async {
     await Hive.initFlutter();
-    Response responce = await Dio().get('http://91.222.236.176:8880/api/menu');
+    Response responce = await Dio().get('http://147.45.109.158:8881/api/menu');
     var box = await Hive.openBox('menuBox1');
 
     await box.put('menu', json.encode(responce.data));

@@ -4,10 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:valentino/buisiness/auth_bloc/auth_bloc.dart';
-import 'package:valentino/ui/auth_page/signin_or_signup_screen.dart';
-import 'package:valentino/ui/constants.dart';
-import 'package:valentino/ui/profile_page/components/remove_account_dialog.dart';
+import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
+import 'package:pinzeria/ui/auth_page/signin_or_signup_screen.dart';
+import 'package:pinzeria/ui/constants.dart';
+import 'package:pinzeria/ui/profile_page/components/remove_account_dialog.dart';
 
 class ClientDataPage extends StatefulWidget {
   @override
@@ -279,7 +279,7 @@ class _ClientDataPageState extends State<ClientDataPage> {
                         if (isDeleteDialog == null) return;
                         if (isDeleteDialog) {
                           Response response = await Dio().delete(
-                              'http://91.222.236.176:8880/auth/delete/',
+                              'http://147.45.109.158:8881/auth/delete/',
                               options: Options(headers: <String, String>{
                                 'authorization': 'Bearer ${accessToken}'
                               }));

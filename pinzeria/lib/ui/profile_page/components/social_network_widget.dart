@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:valentino/ui/constants.dart';
+import 'package:pinzeria/ui/constants.dart';
 
 class SocialNetworkWidget extends StatelessWidget {
   @override
@@ -14,7 +14,7 @@ class SocialNetworkWidget extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 62, 65, 59),
+            color: kPrimaryColor,
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
@@ -46,7 +46,7 @@ class SocialNetworkWidget extends StatelessWidget {
                           minimumSize: Size(height * 0.06, width * 0.13),
                         ),
                         onPressed: () async {
-                          final url = "https://vk.com/valentino_vrn";
+                          final url = "https://vk.com/pinzeria_vrn";
                           if (await canLaunch(url)) {
                             await launch(
                               url,
@@ -101,7 +101,7 @@ class SocialNetworkWidget extends StatelessWidget {
                           minimumSize: Size(height * 0.06, width * 0.13),
                         ),
                         onPressed: () async {
-                          final url = "https://t.me/Valentino_vrn";
+                          final url = "https://t.me/pinzeria_vrn";
                           if (await canLaunch(url)) {
                             await launch(
                               url,

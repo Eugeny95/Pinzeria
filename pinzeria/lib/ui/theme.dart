@@ -13,7 +13,7 @@ ThemeData lightThemeData(BuildContext context) {
     scaffoldBackgroundColor: kContentColorLightTheme,
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-      backgroundColor: kFourthColor,
+      backgroundColor: kButtonColor,
     )),
     appBarTheme: appBarTheme.copyWith(backgroundColor: kContentColorLightTheme),
     iconTheme: IconThemeData(color: kContentColorDarkTheme),
