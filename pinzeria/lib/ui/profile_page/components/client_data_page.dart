@@ -23,11 +23,11 @@ class _ClientDataPageState extends State<ClientDataPage> {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-          iconTheme: IconThemeData(color: Color.fromARGB(180, 253, 253, 253)),
+          iconTheme: IconThemeData(color: Color.fromARGB(219, 70, 70, 70)),
           backgroundColor: kPrimaryColor,
           title: Text('Данные пользователя',
               style: TextStyle(
-                  color: Color.fromARGB(202, 255, 255, 255), fontSize: 18))),
+                  color: Color.fromARGB(221, 51, 51, 51), fontSize: 18))),
       body: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           print('users firstname = ${state.user!.first_name}');
@@ -37,8 +37,10 @@ class _ClientDataPageState extends State<ClientDataPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(padding: EdgeInsets.only(top: 100)),
-                  Container(child: Image.asset('assets/ValBon.png')),
+                  Padding(padding: EdgeInsets.only(top: height * 0.15)),
+                  Container(
+                      width: width * 0.9,
+                      child: Image.asset('assets/PinBon.png')),
                   Padding(padding: EdgeInsets.only(top: 70)),
                   Text('Вы не авторизованы'),
                   SizedBox(
@@ -47,7 +49,8 @@ class _ClientDataPageState extends State<ClientDataPage> {
                   ElevatedButton(
                       child: Text(
                         'Войти',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(
+                            color: const Color.fromARGB(255, 75, 75, 75)),
                       ),
                       onPressed: () async {
                         AuthBloc authBloc = BlocProvider.of<AuthBloc>(context);
@@ -85,7 +88,7 @@ class _ClientDataPageState extends State<ClientDataPage> {
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage(
-                          "assets/VB.png",
+                          "assets/PinBon.png",
                         ),
                         opacity: 0.15)),
                 width: width * 0.9,
@@ -109,13 +112,9 @@ class _ClientDataPageState extends State<ClientDataPage> {
                             ),
                           ],
                         ),
-                        Divider(
-                            color: const Color.fromARGB(224, 255, 255, 255)),
+                        Divider(color: Color.fromARGB(207, 51, 51, 51)),
                       ],
                     )),
-                  ),
-                  SizedBox(
-                    height: height * 0.01,
                   ),
                   Container(
                     height: height * 0.06,
@@ -136,13 +135,9 @@ class _ClientDataPageState extends State<ClientDataPage> {
                             ),
                           ],
                         ),
-                        Divider(
-                            color: const Color.fromARGB(224, 255, 255, 255)),
+                        Divider(color: const Color.fromARGB(207, 51, 51, 5)),
                       ],
                     )),
-                  ),
-                  SizedBox(
-                    height: height * 0.01,
                   ),
                   Container(
                     height: height * 0.06,
@@ -163,8 +158,7 @@ class _ClientDataPageState extends State<ClientDataPage> {
                             ),
                           ],
                         ),
-                        Divider(
-                            color: const Color.fromARGB(224, 255, 255, 255)),
+                        Divider(color: const Color.fromARGB(207, 51, 51, 55)),
                       ],
                     )),
                   ),
@@ -191,13 +185,9 @@ class _ClientDataPageState extends State<ClientDataPage> {
                             ),
                           ],
                         ),
-                        Divider(
-                            color: const Color.fromARGB(224, 255, 255, 255)),
+                        Divider(color: const Color.fromARGB(207, 51, 51, 5)),
                       ],
                     )),
-                  ),
-                  SizedBox(
-                    height: height * 0.01,
                   ),
                   Container(
                     height: height * 0.06,
@@ -218,16 +208,12 @@ class _ClientDataPageState extends State<ClientDataPage> {
                             ),
                           ],
                         ),
-                        Divider(
-                            color: const Color.fromARGB(224, 255, 255, 255)),
+                        Divider(color: const Color.fromARGB(207, 51, 51, 5)),
                       ],
                     )),
                   ),
                   SizedBox(
-                    height: height * 0.04,
-                  ),
-                  SizedBox(
-                    height: height * 0.02,
+                    height: height * 0.06,
                   ),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -289,7 +275,8 @@ class _ClientDataPageState extends State<ClientDataPage> {
                         }
                       },
                       child: Text('Удалить аккаунт',
-                          style: TextStyle(color: Colors.white))),
+                          style: TextStyle(
+                              color: const Color.fromARGB(207, 51, 51, 5)))),
                 ]),
               ),
             ]),

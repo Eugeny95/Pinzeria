@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 import 'package:intl/intl.dart';
 import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
+import 'package:pinzeria/ui/constants.dart';
 
 import 'package:pinzeria/utils/Validator.dart';
 
@@ -47,11 +48,11 @@ class RegisterDialogState extends State<RegisterDialog> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return AlertDialog(
-      backgroundColor: Color.fromARGB(255, 79, 102, 59),
+      backgroundColor: Color.fromARGB(255, 236, 234, 214),
       insetPadding: EdgeInsets.all(30),
       title: Text(
         'Регистрация',
-        style: TextStyle(color: Color.fromARGB(172, 255, 255, 255)),
+        style: TextStyle(color: Color.fromARGB(172, 29, 29, 29)),
       ),
       actionsAlignment: MainAxisAlignment.center,
       content: Container(
@@ -64,7 +65,7 @@ class RegisterDialogState extends State<RegisterDialog> {
                   children: [
                     Padding(padding: EdgeInsets.only(top: height * 0.03)),
                     TextFormField(
-                      cursorColor: Color.fromARGB(217, 255, 255, 255),
+                      cursorColor: Color.fromARGB(217, 49, 49, 49),
                       textCapitalization: TextCapitalization.words,
                       validator: (value) => Validator.isEmptyValid(value!),
                       onChanged: (String value) {
@@ -76,17 +77,25 @@ class RegisterDialogState extends State<RegisterDialog> {
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: BorderSide(
-                                  color: Color.fromARGB(209, 255, 255, 255),
+                                  color: Color.fromARGB(217, 49, 49, 49),
                                   width: 2.0)),
-                          prefixIcon: Icon(Icons.person_add,
-                              color: Color.fromARGB(209, 255, 255, 255)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(187, 44, 44, 44),
+                                  width: 1.0)),
+                          prefixIcon: Icon(
+                            Icons.person_add,
+                            color: Color.fromARGB(217, 49, 49, 49),
+                          ),
                           labelText: 'Имя',
                           labelStyle: TextStyle(
-                              color: Color.fromARGB(209, 255, 255, 255))),
+                            color: Color.fromARGB(217, 49, 49, 49),
+                          )),
                     ),
                     Padding(padding: EdgeInsets.only(top: height * 0.015)),
                     TextFormField(
-                      cursorColor: Color.fromARGB(217, 255, 255, 255),
+                      cursorColor: Color.fromARGB(209, 41, 41, 41),
                       textCapitalization: TextCapitalization.words,
                       validator: (value) => Validator.isEmptyValid(value!),
                       onChanged: (String value) {
@@ -98,17 +107,22 @@ class RegisterDialogState extends State<RegisterDialog> {
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: BorderSide(
-                                  color: Color.fromARGB(209, 255, 255, 255),
+                                  color: Color.fromARGB(209, 41, 41, 41),
                                   width: 2.0)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(187, 44, 44, 44),
+                                  width: 1.0)),
                           prefixIcon: Icon(Icons.person_add,
-                              color: Color.fromARGB(209, 255, 255, 255)),
+                              color: Color.fromARGB(209, 41, 41, 41)),
                           labelText: 'Фамилия',
                           labelStyle: TextStyle(
-                              color: Color.fromARGB(209, 255, 255, 255))),
+                              color: Color.fromARGB(209, 41, 41, 41))),
                     ),
                     Padding(padding: EdgeInsets.only(top: height * 0.015)),
                     TextFormField(
-                      cursorColor: Color.fromARGB(209, 255, 255, 255),
+                      cursorColor: Color.fromARGB(209, 41, 41, 41),
                       keyboardType: TextInputType.number,
                       inputFormatters: <TextInputFormatter>[
                         FilteringTextInputFormatter.allow(RegExp(r'[0-9.,]'))
@@ -124,18 +138,23 @@ class RegisterDialogState extends State<RegisterDialog> {
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: BorderSide(
-                                  color: Color.fromARGB(209, 255, 255, 255),
+                                  color: Color.fromARGB(209, 41, 41, 41),
                                   width: 2.0)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(187, 44, 44, 44),
+                                  width: 1.0)),
                           prefixIcon: Icon(Icons.phone_iphone,
-                              color: Color.fromARGB(209, 255, 255, 255)),
+                              color: Color.fromARGB(209, 41, 41, 41)),
                           labelText: 'Телефон',
                           prefixText: '+7',
                           labelStyle: TextStyle(
-                              color: Color.fromARGB(209, 255, 255, 255))),
+                              color: Color.fromARGB(209, 41, 41, 41))),
                     ),
                     Padding(padding: EdgeInsets.only(top: height * 0.015)),
                     TextFormField(
-                      cursorColor: Color.fromARGB(209, 255, 255, 255),
+                      cursorColor: Color.fromARGB(209, 41, 41, 41),
                       //controller: TextEditingController()..text = dateTime,
 
                       //initialValue: dateTime,
@@ -149,18 +168,23 @@ class RegisterDialogState extends State<RegisterDialog> {
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: BorderSide(
-                                  color: Color.fromARGB(209, 255, 255, 255),
+                                  color: Color.fromARGB(209, 41, 41, 41),
                                   width: 2.0)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(187, 44, 44, 44),
+                                  width: 1.0)),
                           prefixIcon: Icon(Icons.mail,
-                              color: Color.fromARGB(209, 255, 255, 255)),
+                              color: Color.fromARGB(209, 41, 41, 41)),
                           labelText: 'Email',
                           labelStyle: TextStyle(
-                              color: Color.fromARGB(209, 255, 255, 255))),
+                              color: Color.fromARGB(209, 41, 41, 41))),
                     ),
 
                     Padding(padding: EdgeInsets.only(top: height * 0.015)),
                     TextFormField(
-                      cursorColor: Color.fromARGB(209, 255, 255, 255),
+                      cursorColor: Color.fromARGB(209, 41, 41, 41),
                       controller: dateCtl,
                       // inputFormatters: <TextInputFormatter>[_dateFormatter],
                       decoration: InputDecoration(
@@ -169,13 +193,18 @@ class RegisterDialogState extends State<RegisterDialog> {
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: BorderSide(
-                                  color: Color.fromARGB(209, 255, 255, 255),
+                                  color: Color.fromARGB(209, 41, 41, 41),
                                   width: 2.0)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(187, 44, 44, 44),
+                                  width: 1.0)),
                           prefixIcon: Icon(Icons.date_range,
-                              color: Color.fromARGB(209, 255, 255, 255)),
+                              color: Color.fromARGB(209, 41, 41, 41)),
                           labelText: 'Дата рождения',
                           labelStyle: TextStyle(
-                            color: Color.fromARGB(209, 255, 255, 255),
+                            color: Color.fromARGB(209, 41, 41, 41),
                           )),
                       onChanged: (String value) {
                         // date_birth = value;
@@ -254,7 +283,7 @@ class RegisterDialogState extends State<RegisterDialog> {
 
                     Padding(padding: EdgeInsets.only(top: height * 0.015)),
                     TextFormField(
-                      cursorColor: Color.fromARGB(209, 255, 255, 255),
+                      cursorColor: Color.fromARGB(209, 41, 41, 41),
                       //controller: TextEditingController()..text = dateTime,
 
                       //initialValue: dateTime,
@@ -273,7 +302,7 @@ class RegisterDialogState extends State<RegisterDialog> {
                               obscurePassword1
                                   ? Icons.visibility
                                   : Icons.visibility_off,
-                              color: Color.fromARGB(209, 255, 255, 255),
+                              color: Color.fromARGB(209, 41, 41, 41),
                             ),
                           ),
                           border: OutlineInputBorder(
@@ -281,18 +310,23 @@ class RegisterDialogState extends State<RegisterDialog> {
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: BorderSide(
-                                  color: Color.fromARGB(209, 255, 255, 255),
+                                  color: Color.fromARGB(209, 41, 41, 41),
                                   width: 2.0)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(187, 44, 44, 44),
+                                  width: 1.0)),
                           prefixIcon: Icon(Icons.key,
-                              color: Color.fromARGB(209, 255, 255, 255)),
+                              color: Color.fromARGB(209, 41, 41, 41)),
                           labelText: 'Пароль',
                           labelStyle: TextStyle(
-                            color: Color.fromARGB(209, 255, 255, 255),
+                            color: Color.fromARGB(209, 41, 41, 41),
                           )),
                     ),
                     Padding(padding: EdgeInsets.only(top: height * 0.015)),
                     TextFormField(
-                      cursorColor: Color.fromARGB(209, 255, 255, 255),
+                      cursorColor: Color.fromARGB(209, 41, 41, 41),
                       //controller: TextEditingController()..text = dateTime,
 
                       //initialValue: dateTime,
@@ -312,7 +346,7 @@ class RegisterDialogState extends State<RegisterDialog> {
                               obscurePassword2
                                   ? Icons.visibility
                                   : Icons.visibility_off,
-                              color: const Color.fromARGB(209, 255, 255, 255),
+                              color: const Color.fromARGB(209, 41, 41, 41),
                             ),
                           ),
                           border: OutlineInputBorder(
@@ -320,15 +354,20 @@ class RegisterDialogState extends State<RegisterDialog> {
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: BorderSide(
-                                  color: Color.fromARGB(209, 255, 255, 255),
+                                  color: Color.fromARGB(209, 41, 41, 41),
                                   width: 2.0)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(187, 44, 44, 44),
+                                  width: 1.0)),
                           prefixIcon: Icon(
                             Icons.key,
-                            color: Color.fromARGB(209, 255, 255, 255),
+                            color: Color.fromARGB(209, 41, 41, 41),
                           ),
                           labelText: 'Повторите пароль',
                           labelStyle: TextStyle(
-                              color: Color.fromARGB(209, 255, 255, 255))),
+                              color: Color.fromARGB(209, 41, 41, 41))),
                     ),
                     Text(
                       textStatus,
@@ -350,7 +389,8 @@ class RegisterDialogState extends State<RegisterDialog> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                               side: BorderSide(
-                                  color: Colors.white, width: 0.3) // <-- Radius
+                                  color: Color.fromARGB(140, 47, 47, 47),
+                                  width: 0.3) // <-- Radius
                               ),
                           elevation: 5,
                           minimumSize: Size(height * 0.75, width * 0.12),
@@ -419,12 +459,12 @@ class RegisterDialogState extends State<RegisterDialog> {
                         },
                         child: Text('Зарегистрироваться',
                             style: TextStyle(
-                                color: Color.fromARGB(217, 255, 255, 255)))),
+                                color: Color.fromARGB(217, 54, 54, 54)))),
                     Padding(padding: EdgeInsets.only(top: height * 0.01)),
                     TextButton(
                       child: Text('Отмена',
                           style: TextStyle(
-                              color: Color.fromARGB(219, 255, 255, 255),
+                              color: Color.fromARGB(219, 47, 47, 47),
                               fontSize: 14)),
                       onPressed: () {
                         Navigator.pop(context);

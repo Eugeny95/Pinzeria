@@ -440,11 +440,12 @@ class BasketPageState extends State<BasketPage> {
 
                                   textCapitalization:
                                       TextCapitalization.sentences,
-                                  cursorColor: Color.fromARGB(194, 42, 42, 42),
+
                                   // validator: (value) => Validator.isEmptyValid(value!),
                                   onChanged: (String value) {
                                     comment = value;
                                   },
+                                  cursorColor: Color.fromARGB(194, 42, 42, 42),
                                   decoration: InputDecoration(
                                       border: OutlineInputBorder(
                                           borderRadius:

@@ -19,11 +19,11 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
 
     return Scaffold(
       appBar: AppBar(
-          iconTheme: IconThemeData(color: Color.fromARGB(180, 253, 253, 253)),
+          iconTheme: IconThemeData(color: Color.fromARGB(180, 52, 52, 52)),
           backgroundColor: kPrimaryColor,
           title: Text('О ресторане',
               style: TextStyle(
-                  color: Color.fromARGB(202, 255, 255, 255), fontSize: 18))),
+                  color: Color.fromARGB(201, 67, 67, 67), fontSize: 18))),
       body: Center(
         child: Container(
           width: width * 0.9,
@@ -88,7 +88,7 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
                         },
                         child: Text('Забронировать столик',
                             style: TextStyle(
-                                color: Color.fromARGB(255, 220, 220, 220)))),
+                                color: Color.fromARGB(206, 53, 53, 53)))),
                   ]),
                 ),
                 Padding(padding: EdgeInsets.only(top: 20)),
@@ -160,7 +160,7 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
                         },
                         child: Text('Забронировать столик',
                             style: TextStyle(
-                                color: Color.fromARGB(255, 220, 220, 220)))),
+                                color: Color.fromARGB(210, 60, 60, 60)))),
                   ]),
                 ),
                 Padding(padding: EdgeInsets.only(top: 40)),

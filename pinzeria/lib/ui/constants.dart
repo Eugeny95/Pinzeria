@@ -9,6 +9,6 @@ const kContentColorDarkTheme = Color.fromARGB(255, 0, 0, 0);
 const kWarninngColor = Color(0xFFF3BB1C);
 const kErrorColor = Color(0xFFF03738);
 const kIconsColor = Color.fromARGB(222, 19, 19, 19);
-const kButtonColor = Color.fromARGB(230, 254, 249, 239);
+const kButtonColor = Color.fromARGB(230, 255, 248, 233);
 
 const kDefaultPadding = 20.0;

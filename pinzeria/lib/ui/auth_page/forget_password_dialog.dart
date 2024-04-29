@@ -26,13 +26,13 @@ class ForgetPasswordDialogState extends State<ForgetPasswordDialog> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return AlertDialog(
-      backgroundColor: Color.fromARGB(255, 79, 102, 59),
+      backgroundColor: Color.fromARGB(255, 236, 234, 214),
       insetPadding: EdgeInsets.all(30),
       title: Column(
         children: [
           Text(
             'Забыли пароль?',
-            style: TextStyle(color: Color.fromARGB(248, 255, 255, 255)),
+            style: TextStyle(color: Color.fromARGB(210, 23, 23, 23)),
           ),
         ],
       ),
@@ -44,7 +44,7 @@ class ForgetPasswordDialogState extends State<ForgetPasswordDialog> {
             Text(
               'Укажите e-mail, указанный при регистрации и мы вышлем ссылку восстановления пароля ',
               style: TextStyle(
-                  color: Color.fromARGB(248, 255, 255, 255), fontSize: 12),
+                  color: Color.fromARGB(178, 37, 37, 37), fontSize: 12),
             ),
             Form(
                 key: _formKey,
@@ -53,7 +53,7 @@ class ForgetPasswordDialogState extends State<ForgetPasswordDialog> {
                   children: [
                     Padding(padding: EdgeInsets.only(top: height * 0.02)),
                     TextFormField(
-                      cursorColor: Color.fromARGB(209, 255, 255, 255),
+                      cursorColor: Color.fromARGB(209, 37, 37, 37),
                       //controller: TextEditingController()..text = dateTime,
 
                       //initialValue: dateTime,
@@ -67,18 +67,23 @@ class ForgetPasswordDialogState extends State<ForgetPasswordDialog> {
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: BorderSide(
-                                  color: Color.fromARGB(209, 255, 255, 255),
+                                  color: Color.fromARGB(209, 46, 46, 46),
                                   width: 2.0)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(209, 46, 46, 46),
+                                  width: 1.0)),
                           prefixIcon: Icon(Icons.mail,
-                              color: Color.fromARGB(209, 255, 255, 255)),
+                              color: Color.fromARGB(209, 46, 46, 46)),
                           labelText: 'Email',
                           labelStyle: TextStyle(
-                              color: Color.fromARGB(209, 255, 255, 255))),
+                              color: Color.fromARGB(209, 46, 46, 46))),
                     ),
-                    Padding(padding: EdgeInsets.only(top: height * 0.03)),
+                    Padding(padding: EdgeInsets.only(top: height * 0.02)),
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromARGB(248, 255, 255, 255),
+                          backgroundColor: Color.fromARGB(209, 46, 46, 46),
                           shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.circular(12), // <-- Radius
@@ -139,11 +144,10 @@ class ForgetPasswordDialogState extends State<ForgetPasswordDialog> {
                           'Восстановить пароль',
                           style: TextStyle(),
                         )),
-                    Padding(padding: EdgeInsets.only(top: height * 0.02)),
                     TextButton(
                       child: Text('Отмена',
                           style: TextStyle(
-                              color: Color.fromARGB(248, 255, 255, 255),
+                              color: Color.fromARGB(209, 46, 46, 46),
                               fontSize: 14)),
                       onPressed: () {
                         Navigator.pop(context);

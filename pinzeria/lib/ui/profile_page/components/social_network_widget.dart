@@ -37,6 +37,7 @@ class SocialNetworkWidget extends StatelessWidget {
                   children: [
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: kFourthColor.withOpacity(0.8),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                             // <-- Radius
@@ -65,6 +66,7 @@ class SocialNetworkWidget extends StatelessWidget {
                     // Padding(padding: EdgeInsets.only(left: 10)),
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: kFourthColor.withOpacity(0.8),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                             // <-- Radius
@@ -92,6 +94,7 @@ class SocialNetworkWidget extends StatelessWidget {
                         )),
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: kFourthColor.withOpacity(0.8),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                             // <-- Radius

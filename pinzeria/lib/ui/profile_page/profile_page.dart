@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
 import 'package:pinzeria/ui/constants.dart';
@@ -40,14 +41,14 @@ class _ProfilePageState extends State<ProfilePage> {
                     image: AssetImage('assets/PinBon.png')),
               ),
             ),
-            // Padding(padding: EdgeInsets.only(top: height * 0.032)),
+            Padding(padding: EdgeInsets.only(top: height * 0.03)),
             Align(
                 alignment: Alignment.center, //or choose another Alignment
                 child: Container(
                     color: Colors.transparent,
                     width: width - (0.01 * width),
                     child: AboutWidget())),
-            Padding(padding: EdgeInsets.only(top: height * 0.015)),
+            Padding(padding: EdgeInsets.only(top: height * 0.02)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -71,13 +72,14 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         child: Center(
                           child: Text(
-                            "Данные позьзователя",
+                            "Данные пользователя",
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontFamily: 'Moniqa',
+                                fontFamily:
+                                    GoogleFonts.merriweather().fontFamily,
                                 color: Color.fromARGB(217, 34, 34, 34),
-                                fontSize: height * 0.05,
-                                height: 0.9,
+                                fontSize: height * 0.03,
+                                height: 1,
                                 fontWeight: FontWeight.normal),
                           ),
                         )),
@@ -91,40 +93,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 child: ClientDataPage()),
                           ));
                     }),
-                // ElevatedButton(
-                //     style: ElevatedButton.styleFrom(
-                //       shape: RoundedRectangleBorder(
-                //           borderRadius: BorderRadius.circular(12),
-                //           side: BorderSide(
-                //               color: Colors.white, width: 0.2) // <-- Radius
-                //           ),
-                //       elevation: 5,
-                //       minimumSize: Size(height * 0.1, width * 0.12),
-                //     ),
-                //     onPressed: () {
-                //       AuthBloc authBloc = BlocProvider.of<AuthBloc>(context);
-                //       Navigator.push(
-                //           context,
-                //           MaterialPageRoute(
-                //             builder: (context) => BlocProvider<AuthBloc>.value(
-                //                 value: authBloc, //
-                //                 child: ClientDataPage()),
-                //           ));
-                //     },
-                //     child: Row(
-                //       children: [
-                //         Icon(
-                //           Icons.person,
-                //           size: 22,
-                //           color: kIconsColor,
-                //         ),
-                //         SizedBox(
-                //           width: width * 0.03,
-                //         ),
-                //         Text('Данные \n пользователя',
-                //             style: TextStyle(color: kIconsColor)),
-                //       ],
-                //     )),
+
                 Column(
                   children: [
                     Row(
@@ -151,11 +120,12 @@ class _ProfilePageState extends State<ProfilePage> {
                                     "Про ресторан",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        fontFamily: 'Moniqa',
-                                        color: Color.fromARGB(178, 34, 34, 34),
-                                        fontSize: height * 0.025,
-                                        height: 0.9,
-                                        fontWeight: FontWeight.bold),
+                                        fontFamily: GoogleFonts.merriweather()
+                                            .fontFamily,
+                                        color: Color.fromARGB(236, 34, 34, 34),
+                                        fontSize: height * 0.018,
+                                        height: 1,
+                                        fontWeight: FontWeight.normal),
                                   ),
                                 )),
                             onTap: () {
@@ -167,7 +137,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               );
                             }),
                         SizedBox(
-                          width: width * 0.02,
+                          width: width * 0.01,
                         ),
                         GestureDetector(
                             child: Container(
@@ -191,11 +161,12 @@ class _ProfilePageState extends State<ProfilePage> {
                                     "Карта доставки",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        fontFamily: 'Moniqa',
-                                        color: Color.fromARGB(185, 34, 34, 34),
-                                        fontSize: height * 0.025,
-                                        height: 0.9,
-                                        fontWeight: FontWeight.bold),
+                                        fontFamily: GoogleFonts.merriweather()
+                                            .fontFamily,
+                                        color: Color.fromARGB(217, 34, 34, 34),
+                                        fontSize: height * 0.018,
+                                        height: 1,
+                                        fontWeight: FontWeight.normal),
                                   ),
                                 )),
                             onTap: () {
@@ -212,7 +183,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     GestureDetector(
                         child: Container(
-                            width: height * 0.21,
+                            width: height * 0.2,
                             height: width * 0.2,
                             decoration: BoxDecoration(
                               border: Border.all(
@@ -224,7 +195,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               image: DecorationImage(
                                   image: AssetImage("assets/PinBon.png"),
                                   opacity: 0.1,
-                                  fit: BoxFit.fitWidth),
+                                  fit: BoxFit.fill),
                               // button text
                             ),
                             child: Center(
@@ -232,9 +203,12 @@ class _ProfilePageState extends State<ProfilePage> {
                                 "Политика конфиденциальности",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold),
+                                    fontFamily:
+                                        GoogleFonts.merriweather().fontFamily,
+                                    color: Color.fromARGB(217, 34, 34, 34),
+                                    fontSize: height * 0.017,
+                                    height: 1,
+                                    fontWeight: FontWeight.normal),
                               ),
                             )),
                         onTap: () {

@@ -29,11 +29,11 @@ class SigninOrSignupScreenState extends State<SigninOrSignupScreen> {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-          iconTheme: IconThemeData(color: Color.fromARGB(180, 253, 253, 253)),
+          iconTheme: IconThemeData(color: Color.fromARGB(180, 47, 47, 47)),
           backgroundColor: kPrimaryColor,
           title: Text('Авторизация',
               style: TextStyle(
-                  color: Color.fromARGB(202, 255, 255, 255), fontSize: 18))),
+                  color: Color.fromARGB(201, 40, 40, 40), fontSize: 18))),
       body: ListView(
         children: [
           Padding(
@@ -56,16 +56,16 @@ class SigninOrSignupScreenState extends State<SigninOrSignupScreen> {
                                     bottomRight: Radius.circular(25)),
                                 image: DecorationImage(
                                   image: AssetImage(
-                                    "assets/VB.png",
+                                    "assets/PinBon.png",
                                   ),
-                                  opacity: 0.60,
+                                  opacity: 0.90,
                                   fit: BoxFit.fitHeight,
                                 ),
                               )),
                           //Spacer(flex: 1),
                           SizedBox(height: kDefaultPadding * 0.9),
                           TextFormField(
-                            cursorColor: Color.fromARGB(139, 255, 255, 255),
+                            cursorColor: Color.fromARGB(181, 51, 51, 51),
 
                             //controller: TextEditingController()..text = dateTime,
 
@@ -81,36 +81,35 @@ class SigninOrSignupScreenState extends State<SigninOrSignupScreen> {
                               login = '8' + value;
                             },
                             decoration: InputDecoration(
-                                fillColor: Color.fromARGB(139, 255, 255, 255),
-                                focusColor:
-                                    Color.fromRGBO(255, 255, 255, 0.545),
+                                fillColor: Color.fromARGB(138, 65, 65, 65),
+                                focusColor: Color.fromRGBO(45, 45, 45, 0.541),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide(
-                                        color:
-                                            Color.fromARGB(199, 255, 255, 255),
+                                        color: Color.fromARGB(187, 44, 44, 44),
                                         width: 1.0)),
                                 focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide(
-                                        color: Color.fromRGBO(
-                                            255, 255, 255, 0.545),
+                                        color: Color.fromARGB(187, 44, 44, 44),
                                         width: 1.0)),
                                 prefixText: '+7',
-                                prefixIcon: Icon(Icons.phone_iphone,
-                                    color: Color.fromARGB(139, 255, 255, 255)),
+                                prefixIcon: Icon(
+                                  Icons.phone_iphone,
+                                  color: Color.fromARGB(187, 44, 44, 44),
+                                ),
                                 labelText: 'Телефон',
                                 labelStyle: TextStyle(
-                                    color: Color.fromARGB(139, 255, 255, 255),
+                                    color: Color.fromARGB(187, 44, 44, 44),
                                     fontSize: 14)),
                           ),
 
                           SizedBox(height: kDefaultPadding * 0.7),
                           TextFormField(
-                            cursorColor: Color.fromARGB(139, 255, 255, 255),
+                            cursorColor: Color.fromARGB(187, 44, 44, 44),
                             //controller: TextEditingController()..text = dateTime,
                             obscureText: obscurePassword1,
                             //initialValue: dateTime,
@@ -130,30 +129,28 @@ class SigninOrSignupScreenState extends State<SigninOrSignupScreen> {
                                     obscurePassword1
                                         ? Icons.visibility
                                         : Icons.visibility_off,
-                                    color: Color.fromARGB(209, 255, 255, 255),
+                                    color: Color.fromARGB(187, 44, 44, 44),
                                   ),
                                 ),
-                                fillColor: Color.fromARGB(139, 255, 255, 255),
-                                focusColor: Color.fromARGB(139, 255, 255, 255),
+                                fillColor: Color.fromARGB(187, 44, 44, 44),
+                                focusColor: Color.fromARGB(187, 44, 44, 44),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10)),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide(
-                                        color:
-                                            Color.fromARGB(199, 255, 255, 255),
+                                        color: Color.fromARGB(150, 44, 44, 44),
                                         width: 1.0)),
                                 focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide(
-                                        color:
-                                            Color.fromARGB(139, 255, 255, 255),
+                                        color: Color.fromARGB(187, 44, 44, 44),
                                         width: 1.0)),
                                 prefixIcon: Icon(Icons.key,
-                                    color: Color.fromARGB(139, 255, 255, 255)),
+                                    color: Color.fromARGB(187, 44, 44, 44)),
                                 labelText: 'Пароль',
                                 labelStyle: TextStyle(
-                                    color: Color.fromARGB(139, 255, 255, 255),
+                                    color: Color.fromARGB(187, 44, 44, 44),
                                     fontSize: 14)),
                           ),
 
@@ -173,8 +170,8 @@ class SigninOrSignupScreenState extends State<SigninOrSignupScreen> {
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15),
                                     side: BorderSide(
-                                        color: Colors.white,
-                                        width: 0.3) // <-- Radius
+                                        color: Color.fromARGB(76, 58, 58, 58),
+                                        width: 0.5) // <-- Radius
                                     ),
                                 elevation: 5,
                                 minimumSize: Size(height * 0.4, width * 0.12),
@@ -182,8 +179,8 @@ class SigninOrSignupScreenState extends State<SigninOrSignupScreen> {
                               child: Text(
                                 "Войти",
                                 style: TextStyle(
-                                    color: Color.fromARGB(218, 255, 255, 255),
-                                    fontSize: 13),
+                                    color: Color.fromARGB(221, 31, 31, 31),
+                                    fontSize: 14),
                               ),
                               onPressed: () async {
                                 if (!_formKey.currentState!.validate()) return;
@@ -248,8 +245,8 @@ class SigninOrSignupScreenState extends State<SigninOrSignupScreen> {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(15),
                                   side: BorderSide(
-                                      color: Colors.white,
-                                      width: 0.3) // <-- Radius
+                                      color: Color.fromARGB(76, 58, 58, 58),
+                                      width: 0.5) // <-- Radius
                                   ),
                               elevation: 5,
                               minimumSize: Size(height * 0.4, width * 0.12),
@@ -258,7 +255,7 @@ class SigninOrSignupScreenState extends State<SigninOrSignupScreen> {
                             child: Text(
                               "Зарегистрироваться",
                               style: TextStyle(
-                                  color: Color.fromARGB(170, 255, 255, 255)),
+                                  color: Color.fromARGB(215, 42, 42, 42)),
                             ),
                             onPressed: () async {
                               dynamic result = await showDialog(
@@ -285,7 +282,11 @@ class SigninOrSignupScreenState extends State<SigninOrSignupScreen> {
                                   },
                                 );
                               },
-                              child: Text('Забыли пароль?')),
+                              child: Text(
+                                'Забыли пароль?',
+                                style: TextStyle(
+                                    color: const Color.fromARGB(205, 0, 0, 0)),
+                              )),
                         ])),
                       ],
                     )),

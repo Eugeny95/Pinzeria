@@ -6,11 +6,11 @@ import 'package:pinzeria/ui/constants.dart';
 import 'package:pinzeria/ui/menu_page/components/table_dialog.dart';
 
 final List<String> imgList = [
-  'http://147.45.109.158:8881/image/image/home_1.jpg',
-  'http://147.45.109.158:8881/image/image/home_2.jpg',
-  'http://147.45.109.158:8881/image/image/home_3.jpg',
-  'http://147.45.109.158:8881/image/image/home_4.jpg',
-  'http://147.45.109.158:8881/image/image/home_5.jpg'
+  'http://147.45.109.158:8881/image_pinzeria/image/home_1.jpg',
+  'http://147.45.109.158:8881/image_pinzeria/image/home_2.jpg',
+  'http://147.45.109.158:8881/image_pinzeria/image/home_3.jpg',
+  'http://147.45.109.158:8881/image_pinzeria/image/home_4.jpg',
+  'http://147.45.109.158:8881/image_pinzeria/image/home_5.jpg'
 ];
 
 final List<Widget> imageSliders = imgList
