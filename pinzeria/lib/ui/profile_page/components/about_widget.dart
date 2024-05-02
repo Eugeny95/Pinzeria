@@ -36,7 +36,7 @@ class AboutWidget extends StatelessWidget {
                   style: TextStyle(
                       fontFamily: GoogleFonts.merriweather().fontFamily,
                       color: Colors.white,
-                      fontSize: 23,
+                      fontSize: 22,
                       height: 0.95,
                       fontWeight: FontWeight.normal),
                 ),
@@ -55,14 +55,14 @@ class AboutWidget extends StatelessWidget {
                               child: Row(children: [
                                 Icon(
                                   Icons.place,
-                                  size: 18,
+                                  size: 15,
                                   color: Colors.white,
                                 ),
                                 GestureDetector(
                                     child: Text(
                                       ' Воронеж, улица Урицкого, 70',
                                       style: TextStyle(
-                                          fontSize: 18, color: Colors.white),
+                                          fontSize: 15, color: Colors.white),
                                     ),
                                     onTap: () async {
                                       final url =
@@ -82,7 +82,7 @@ class AboutWidget extends StatelessWidget {
                                 child: Row(children: [
                                   Icon(
                                     Icons.phone_iphone,
-                                    size: 18,
+                                    size: 15,
                                     color: Colors.white,
                                   ),
                                   GestureDetector(
@@ -91,7 +91,7 @@ class AboutWidget extends StatelessWidget {
                                         style: (TextStyle(
                                             fontWeight: FontWeight.w800,
                                             color: Colors.white,
-                                            fontSize: 17)),
+                                            fontSize: 14)),
                                       ),
                                       onTap: () async {
                                         final url = "tel://+7(473)2333301";
