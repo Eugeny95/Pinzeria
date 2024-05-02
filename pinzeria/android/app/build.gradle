@@ -2,6 +2,8 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
+
+
 }
 
 def localProperties = new Properties()
@@ -29,9 +31,11 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
+    ndkVersion "25.1.8937393"
     namespace "com.yappa.pinzeria"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
+    
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

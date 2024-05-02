@@ -36,7 +36,7 @@ class AboutWidget extends StatelessWidget {
                   style: TextStyle(
                       fontFamily: GoogleFonts.merriweather().fontFamily,
                       color: Colors.white,
-                      fontSize: 28,
+                      fontSize: 23,
                       height: 0.95,
                       fontWeight: FontWeight.normal),
                 ),
@@ -110,12 +110,17 @@ class AboutWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   // crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    SizedBox(
+                    Container(
                       width: width * 0.8,
+                      child: Text(
+                        'Время работы   ',
+                        style: TextStyle(fontSize: 15, color: Colors.white),
+                        textAlign: TextAlign.right,
+                      ),
                     ),
                     Icon(
                       Icons.arrow_right_alt_outlined,
-                      size: 38,
+                      size: 32,
                       color: Colors.white,
                     ),
                   ],
@@ -143,40 +148,77 @@ class AboutWidget extends StatelessWidget {
                   children: [
                     Text(
                       'Время работы ресторана:',
-                      style: TextStyle(fontSize: 15),
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontFamily: GoogleFonts.merriweather().fontFamily,
+                        color: Colors.white,
+                      ),
                     ),
                     SizedBox(
-                      width: width * 0.1,
+                      width: width * 0.05,
                     ),
                     Column(
                       children: [
                         Text(
                           'Понедельник - Пятница',
-                          style: TextStyle(fontSize: 12),
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: GoogleFonts.merriweather().fontFamily,
+                            color: Colors.white,
+                          ),
                         ),
                         Text(
                           '12:00 - 00:00',
-                          style: TextStyle(fontSize: 12),
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: GoogleFonts.merriweather().fontFamily,
+                            color: Colors.white,
+                          ),
                         ),
                         SizedBox(height: height * 0.01),
                         Text(
                           'Суббота - Воскресенье',
-                          style: TextStyle(fontSize: 12),
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: GoogleFonts.merriweather().fontFamily,
+                            color: Colors.white,
+                          ),
                         ),
                         Text(
                           '11:00 - 00:00',
-                          style: TextStyle(fontSize: 12),
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: GoogleFonts.merriweather().fontFamily,
+                            color: Colors.white,
+                          ),
                         ),
                       ],
                     ),
                   ],
                 ),
-                SizedBox(height: height * 0.03),
+                SizedBox(height: height * 0.01),
+                SizedBox(
+                  width: width * 0.9,
+                  height: height * 0.002,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                        gradient: LinearGradient(colors: [
+                      Color.fromARGB(0, 255, 255, 255),
+                      Color.fromARGB(220, 255, 255, 255),
+                      Color.fromARGB(0, 255, 255, 255),
+                    ])),
+                  ),
+                ),
+                SizedBox(height: height * 0.01),
                 Row(
                   children: [
                     Text(
                       'Время работы доставки:',
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontFamily: GoogleFonts.merriweather().fontFamily,
+                        color: Colors.white,
+                      ),
                     ),
                     SizedBox(
                       width: width * 0.1,
@@ -185,11 +227,19 @@ class AboutWidget extends StatelessWidget {
                       children: [
                         Text(
                           'Понедельник - Воскресенье',
-                          style: TextStyle(fontSize: 12),
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: GoogleFonts.merriweather().fontFamily,
+                            color: Colors.white,
+                          ),
                         ),
                         Text(
                           '11:00 - 22:30',
-                          style: TextStyle(fontSize: 12),
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: GoogleFonts.merriweather().fontFamily,
+                            color: Colors.white,
+                          ),
                         ),
                       ],
                     ),

@@ -153,7 +153,7 @@ class _MenuPageState extends State<MenuPage> {
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: (index ==
                                                 stateCategory.selectedIndex)
-                                            ? kPrimaryColor
+                                            ? Color.fromARGB(255, 236, 234, 214)
                                             : kPrimaryColor.withOpacity(0.6),
                                         minimumSize:
                                             Size(height * 0.12, width * 0.25),

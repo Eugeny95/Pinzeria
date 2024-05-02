@@ -78,7 +78,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 fontFamily:
                                     GoogleFonts.merriweather().fontFamily,
                                 color: Color.fromARGB(217, 34, 34, 34),
-                                fontSize: height * 0.03,
+                                fontSize: height * 0.025,
                                 height: 1,
                                 fontWeight: FontWeight.normal),
                           ),
@@ -123,7 +123,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                         fontFamily: GoogleFonts.merriweather()
                                             .fontFamily,
                                         color: Color.fromARGB(236, 34, 34, 34),
-                                        fontSize: height * 0.018,
+                                        fontSize: height * 0.015,
                                         height: 1,
                                         fontWeight: FontWeight.normal),
                                   ),
@@ -164,7 +164,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                         fontFamily: GoogleFonts.merriweather()
                                             .fontFamily,
                                         color: Color.fromARGB(217, 34, 34, 34),
-                                        fontSize: height * 0.018,
+                                        fontSize: height * 0.015,
                                         height: 1,
                                         fontWeight: FontWeight.normal),
                                   ),
@@ -206,7 +206,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     fontFamily:
                                         GoogleFonts.merriweather().fontFamily,
                                     color: Color.fromARGB(217, 34, 34, 34),
-                                    fontSize: height * 0.017,
+                                    fontSize: height * 0.014,
                                     height: 1,
                                     fontWeight: FontWeight.normal),
                               ),

@@ -84,7 +84,7 @@ class SelectDishDialogState extends State<SelectDishDialog> {
     return AlertDialog(
         contentPadding: EdgeInsets.all(10),
         insetPadding: const EdgeInsets.all(20),
-        backgroundColor: Color.fromARGB(255, 255, 248, 240),
+        backgroundColor: Color.fromARGB(255, 236, 234, 214),
         actionsAlignment: MainAxisAlignment.start,
         content: SizedBox(
           //  height: height * 0.9,

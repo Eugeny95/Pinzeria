@@ -22,7 +22,7 @@ class HelperDialogState extends State<HelperDialog> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return AlertDialog(
-      backgroundColor: Color.fromARGB(255, 79, 102, 59),
+      backgroundColor: Color.fromARGB(255, 236, 234, 214),
       insetPadding: EdgeInsets.all(30),
       title: const Column(
         children: [
@@ -30,7 +30,7 @@ class HelperDialogState extends State<HelperDialog> {
             'Авторизация/ Регистрация',
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Color.fromARGB(248, 255, 255, 255),
+              color: Color.fromARGB(217, 37, 37, 37),
               fontSize: 18,
             ),
           ),
@@ -45,7 +45,7 @@ class HelperDialogState extends State<HelperDialog> {
               'Что бы авторизоваться перейдите на страницу "Профиль" >> "Данные пользователя" ',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  color: Color.fromARGB(239, 255, 255, 255), fontSize: 12),
+                  color: Color.fromARGB(192, 49, 49, 49), fontSize: 12),
             ),
           ])),
       shape: const RoundedRectangleBorder(

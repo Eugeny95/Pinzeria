@@ -20,11 +20,11 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
         appBar: AppBar(
-            iconTheme: IconThemeData(color: Color.fromARGB(180, 253, 253, 253)),
+            iconTheme: IconThemeData(color: Color.fromARGB(180, 47, 47, 47)),
             backgroundColor: kPrimaryColor,
             title: Text('Политика конфиденциальности',
                 style: TextStyle(
-                    color: Color.fromARGB(202, 255, 255, 255), fontSize: 18))),
+                    color: Color.fromARGB(201, 35, 35, 35), fontSize: 18))),
         body: Center(
           child: Container(
             width: width * 0.9,

@@ -63,9 +63,8 @@ dependencies:
   toggle_switch: ^2.1.0
   dio: any
   yaml_localizations: ^1.5.0
-  flutter_slimy_card: ^1.0.2
-  animated_flip_card: ^1.0.2
   flip_card: ^0.7.0
+ 
  
  
   

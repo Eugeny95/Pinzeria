@@ -47,7 +47,7 @@ class SocialNetworkWidget extends StatelessWidget {
                           minimumSize: Size(height * 0.06, width * 0.13),
                         ),
                         onPressed: () async {
-                          final url = "https://vk.com/pinzeria_vrn";
+                          final url = "https://vk.com/pinzeriavrn";
                           if (await canLaunch(url)) {
                             await launch(
                               url,
@@ -104,7 +104,7 @@ class SocialNetworkWidget extends StatelessWidget {
                           minimumSize: Size(height * 0.06, width * 0.13),
                         ),
                         onPressed: () async {
-                          final url = "https://t.me/pinzeria_vrn";
+                          final url = "https://t.me/s/pinzeria_vrn";
                           if (await canLaunch(url)) {
                             await launch(
                               url,

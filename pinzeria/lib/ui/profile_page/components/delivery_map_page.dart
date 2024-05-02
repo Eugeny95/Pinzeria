@@ -22,11 +22,11 @@ class _DeliveryMapPageState extends State<DeliveryMapPage> {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
         appBar: AppBar(
-            iconTheme: IconThemeData(color: Color.fromARGB(180, 253, 253, 253)),
+            iconTheme: IconThemeData(color: Color.fromARGB(180, 44, 44, 44)),
             backgroundColor: kPrimaryColor,
             title: Text('Карта доставки',
                 style: TextStyle(
-                    color: Color.fromARGB(202, 255, 255, 255), fontSize: 18))),
+                    color: Color.fromARGB(201, 31, 31, 31), fontSize: 18))),
         body: Center(
             child: Container(
           width: width * 0.9,

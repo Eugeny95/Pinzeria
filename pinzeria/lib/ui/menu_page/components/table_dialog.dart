@@ -29,7 +29,7 @@ class TableDialogState extends State<TableDialog> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return AlertDialog(
-      backgroundColor: kPrimaryColor,
+      backgroundColor: Color.fromARGB(255, 236, 234, 214),
       insetPadding: EdgeInsets.all(30),
       title: const Column(
         children: [

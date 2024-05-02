@@ -97,18 +97,19 @@ class MenuCard extends StatelessWidget {
             padding: const EdgeInsets.only(top: 4.0),
             margin: const EdgeInsets.symmetric(horizontal: 1, vertical: 1),
             decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 1,
-                    blurRadius: 4,
-                    offset: Offset(0, 3), // changes position of shadow
-                  ),
-                ],
-                border:
-                    Border.all(width: 2, color: Color.fromARGB(74, 88, 88, 88)),
-                borderRadius: BorderRadius.circular(15.0),
-                color: Color.fromARGB(255, 251, 239, 234)),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 1,
+                  blurRadius: 4,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
+              border:
+                  Border.all(width: 2, color: Color.fromARGB(74, 88, 88, 88)),
+              borderRadius: BorderRadius.circular(15.0),
+              color: Color.fromARGB(221, 236, 234, 214),
+            ),
             child: Column(children: [
               Container(
                 width: width / 2.4,
