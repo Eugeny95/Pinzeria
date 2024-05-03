@@ -64,7 +64,7 @@ class Cerousel extends StatelessWidget {
     return Scaffold(
       // backgroundColor: kPrimaryColor.withOpacity(0.9),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 252, 241, 232),
+        backgroundColor: Color.fromARGB(221, 236, 234, 214),
         toolbarHeight: height * 0.07,
         actions: [
           FloatingActionButton.small(

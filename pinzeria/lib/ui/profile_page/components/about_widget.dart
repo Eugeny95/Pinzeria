@@ -18,7 +18,7 @@ class AboutWidget extends StatelessWidget {
         print(status);
       },
       front: Container(
-          height: height * 0.2,
+          height: height * 0.17,
           width: width * 0.7,
           decoration: BoxDecoration(
             color: kFourthColor.withOpacity(0.85),
@@ -48,7 +48,7 @@ class AboutWidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
-                              height: height * 0.01,
+                              height: height * 0.02,
                             ),
                             InkWell(
                               onTap: () {},
@@ -103,7 +103,7 @@ class AboutWidget extends StatelessWidget {
                                       }),
                                 ])),
                             Padding(
-                                padding: EdgeInsets.only(top: height * 0.005)),
+                                padding: EdgeInsets.only(top: height * 0.001)),
                           ]),
                     ]),
                 Row(
@@ -113,14 +113,14 @@ class AboutWidget extends StatelessWidget {
                     Container(
                       width: width * 0.8,
                       child: Text(
-                        'Время работы   ',
-                        style: TextStyle(fontSize: 15, color: Colors.white),
+                        'Время работы ресторана   ',
+                        style: TextStyle(fontSize: 13, color: Colors.white),
                         textAlign: TextAlign.right,
                       ),
                     ),
                     Icon(
                       Icons.arrow_right_alt_outlined,
-                      size: 32,
+                      size: 22,
                       color: Colors.white,
                     ),
                   ],
@@ -129,7 +129,7 @@ class AboutWidget extends StatelessWidget {
             ],
           )),
       back: Container(
-        height: height * 0.2,
+        height: height * 0.17,
         width: width * 0.7,
         decoration: BoxDecoration(
           color: kFourthColor.withOpacity(0.85),
@@ -155,7 +155,7 @@ class AboutWidget extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: width * 0.05,
+                      width: width * 0.04,
                     ),
                     Column(
                       children: [
@@ -221,7 +221,7 @@ class AboutWidget extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: width * 0.1,
+                      width: width * 0.06,
                     ),
                     Column(
                       children: [

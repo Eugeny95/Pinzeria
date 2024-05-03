@@ -40,7 +40,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     image: AssetImage('assets/PinBon.png')),
               ),
             ),
-            // Padding(padding: EdgeInsets.only(top: height * 0.032)),
+            Padding(padding: EdgeInsets.only(top: height * 0.02)),
             Align(
                 alignment: Alignment.center, //or choose another Alignment
                 child: Container(
@@ -71,14 +71,14 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         child: Center(
                           child: Text(
-                            "Данные позьзователя",
+                            "Данные пользователя",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontFamily: 'Moniqa',
-                                color: Color.fromARGB(217, 34, 34, 34),
-                                fontSize: height * 0.05,
+                                color: Color.fromARGB(207, 34, 34, 34),
+                                fontSize: height * 0.035,
                                 height: 0.9,
-                                fontWeight: FontWeight.normal),
+                                fontWeight: FontWeight.bold),
                           ),
                         )),
                     onTap: () {
@@ -152,8 +152,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontFamily: 'Moniqa',
-                                        color: Color.fromARGB(178, 34, 34, 34),
-                                        fontSize: height * 0.025,
+                                        color: Color.fromARGB(207, 34, 34, 34),
+                                        fontSize: height * 0.022,
                                         height: 0.9,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -192,8 +192,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontFamily: 'Moniqa',
-                                        color: Color.fromARGB(185, 34, 34, 34),
-                                        fontSize: height * 0.025,
+                                        color: Color.fromARGB(207, 34, 34, 34),
+                                        fontSize: height * 0.022,
                                         height: 0.9,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -224,7 +224,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               image: DecorationImage(
                                   image: AssetImage("assets/PinBon.png"),
                                   opacity: 0.1,
-                                  fit: BoxFit.fitWidth),
+                                  fit: BoxFit.fill),
                               // button text
                             ),
                             child: Center(
@@ -232,8 +232,9 @@ class _ProfilePageState extends State<ProfilePage> {
                                 "Политика конфиденциальности",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 14,
+                                    fontFamily: 'Moniqa',
+                                    color: Color.fromARGB(207, 34, 34, 34),
+                                    fontSize: height * 0.022,
                                     fontWeight: FontWeight.bold),
                               ),
                             )),
