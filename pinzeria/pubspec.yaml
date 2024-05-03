@@ -121,6 +121,8 @@ flutter:
    - assets/SplashBack.png
    - assets/PinBon.png
    - assets/PinBon2.png
+   - assets/pinza.png
+   - assets/event.png
   #  - packages/sbp/assets/sbp.png
   #  - packages/sbp/assets/icons/tinkoff.png
   #  - packages/sbp/assets/icons/sber.png

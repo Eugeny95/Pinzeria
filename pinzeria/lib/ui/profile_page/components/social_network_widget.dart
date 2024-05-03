@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:pinzeria/ui/constants.dart';
 
@@ -29,7 +30,13 @@ class SocialNetworkWidget extends StatelessWidget {
           height: height * 0.11,
           child: Column(
             children: [
-              Text('Мы в соцсетях'),
+              Text(
+                'Мы в соцсетях',
+                style: TextStyle(
+                    fontFamily: GoogleFonts.merriweather().fontFamily,
+                    color: Color.fromARGB(207, 34, 34, 34),
+                    fontSize: 14),
+              ),
               SizedBox(height: height * 0.01),
               Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -36,30 +36,16 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
                   'О нас',
                   style: TextStyle(fontSize: 80, fontFamily: 'Moniqa'),
                 ),
-                Padding(padding: EdgeInsets.only(top: 5)),
+                Padding(padding: EdgeInsets.only(top: 10)),
                 Text(
-                  'pinzeria? Да!',
+                  'Это приятное место, которое завораживает своей домашней приятной атмосферой, удивительными блюдами и вкусами.',
                   style: TextStyle(
                     fontSize: 14,
                   ),
                 ),
                 Padding(padding: EdgeInsets.only(top: 20)),
                 Text(
-                  'Валентино умеет удивлять. И его новое заведение вобрало в себя всё самое лучшее из бережно собранного Маэстро за его длинный и интересный профессиональный путь. Было бы намного правильнее и проще доверить обустройство нового заведения рукам профессионалов, но команда Валентино точно знала, как и что должно быть и вложила в каждый элемент заведения лучшее из впечатлений, эмоций, чтобы атмосфера напоминала лучшие моменты вашей жизни, оставляя приятное послевкусие и ощущение комфорта.',
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-                Padding(padding: EdgeInsets.only(top: 20)),
-                Text(
-                  'Каждое блюдо приготовлено с соблюдением авторских технологий и не оставляет никого равнодушным. Уютное пространство, верность качеству, лучшие ингредиенты, итальянская щедрость и радушие - создают неповторимую атмосферу заведения, в котором хочется, чтобы время остановилось.pinzeria? Да!',
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-                Padding(padding: EdgeInsets.only(top: 20)),
-                Text(
-                  'Как Бонтемпи удаётся сохранять в себе любовь к еде, а главное – искреннее и тёплое отношение к своему Гостю? Всё просто - ему повезло встретить свою главную Любовь, которая стала главной в его жизни, и по другому – невозможно!',
+                  'Ресторан с удовольствием посещают компании друзей, здесь можно провести приятный вечер с родными и коллегами. В ресторан с удовольствием приходят и дети.',
                   style: TextStyle(
                     fontSize: 14,
                   ),
@@ -67,45 +53,24 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
                 Padding(padding: EdgeInsets.only(top: 20)),
                 Container(
                   width: width * 0.9,
-                  child: Column(children: [
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                              side: BorderSide(
-                                  color: Colors.white, width: 0.3) // <-- Radius
-                              ),
-                          elevation: 5,
-                          minimumSize: Size(height * 0.43, width * 0.13),
-                        ),
-                        onPressed: () {
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return TableDialog();
-                            },
-                          );
-                        },
-                        child: Text('Забронировать столик',
-                            style: TextStyle(
-                                color: Color.fromARGB(206, 53, 53, 53)))),
-                  ]),
+                  child: Column(children: []),
                 ),
                 Padding(padding: EdgeInsets.only(top: 20)),
                 Text(
-                  'Наш бренд шеф',
-                  style: TextStyle(fontSize: 60, fontFamily: 'Moniqa'),
+                  'Пинца, это новое слово в итальянской кухне',
+                  style: TextStyle(
+                      fontSize: 60, fontFamily: 'Moniqa', height: 0.8),
                 ),
                 Text(
-                  'Валентино Бонтемпи \n (pinzeria Bontempi)',
+                  'Несколько слов о рецептуре',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 25,
                       fontFamily: 'Moniqa',
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.normal),
                 ),
                 Container(
                   width: width / 1.3,
-                  height: height / 1.8,
+                  height: height / 3.7,
                   padding: EdgeInsets.all(2), // Border width
                   decoration: BoxDecoration(
                       color: Colors.grey[800],
@@ -114,24 +79,110 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
                     borderRadius: BorderRadius.circular(15.0),
                     child: SizedBox.fromSize(
                       size: Size.fromRadius(70), // Image radius
-                      child: CachedNetworkImage(
-                          filterQuality: FilterQuality.low,
-                          imageUrl:
-                              'https://pinzeria-vrn.ru/upload/iblock/26f/zp74zkpwkxbfybi9o1cn3imo1k52oex0.jpg',
-                          fit: BoxFit.cover),
+                      child: Container(
+                          height: height * 0.05,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                                "assets/pinza.png",
+                              ),
+                              // opacity: 0.60,
+                              fit: BoxFit.cover,
+                            ),
+                          )),
                     ),
                   ),
                 ),
                 Padding(padding: EdgeInsets.only(top: 20)),
                 Text(
-                  'Известный итальянский шеф-повар, уже много лет живущий в России и искренне влюбленный в нашу страну. В ресторанном бизнесе он уже около 40 лет и достиг в нем феноменального успеха, став не только успешным ресторатором, но и выпустив несколько кулинарных книг-бестселлеров.',
+                  'Над созданием своего кулинарного шедевра шеф-повар работал тщательно, изучая кухню Римской империи и традиции итальянской кухни. Это блюдо значительно отличается от привычной пиццы не только формой, но и составом, количеством и набором ингредиентов.',
                   style: TextStyle(
                     fontSize: 14,
                   ),
                 ),
                 Padding(padding: EdgeInsets.only(top: 20)),
                 Text(
-                  'Валентино родом из города Качезиа (Ломбардия), с «красным дипломом» окончил престижную высшую школу Caterina De Medici, где получил специальность шеф-повара. Маэстро Валентино стажировался и сотрудничал с лучшими итальянскими шеф-поварами, известными во всем мире. Опыт работы в легендарном ресторане Beauty Farm Villa Paradiso (Фазано, озеро Гарда, Италия), полученный во время сотрудничества с легендарным шеф-поваром Энцо Боски, особенно пригодился Валентино. Именно там он изучил технологию и основные приемы приготовления блюд высокой диетической гастрономии.',
+                  'С добавлением уникальных дрожжей, которые привозят из Италии. Такой компонент придает особую текстуру тесту – при выпекании оно наполняется крупными пузырьками, становится по-настоящему воздушным, легким, хрустящим и ароматным.',
+                  style: TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+                Padding(padding: EdgeInsets.only(top: 20)),
+                Text(
+                  'Из заготовки, которую выдерживают перед выпеканием 72 часа. Это тот самый секрет, который позволяет готовить вкусное блюдо.',
+                  style: TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+                Padding(padding: EdgeInsets.only(top: 20)),
+                Container(
+                    width: width * 0.9,
+                    child: Column(children: [
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                                side: BorderSide(
+                                    color: Color.fromARGB(106, 46, 46, 46),
+                                    width: 0.3) // <-- Radius
+                                ),
+                            elevation: 5,
+                            minimumSize: Size(height * 0.43, width * 0.13),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return TableDialog();
+                              },
+                            );
+                          },
+                          child: Text('Забронировать столик',
+                              style: TextStyle(
+                                  color: Color.fromARGB(210, 60, 60, 60)))),
+                    ])),
+                Padding(padding: EdgeInsets.only(top: 20)),
+                Text(
+                  'Организация торжественных и деловых мероприятий',
+                  style: TextStyle(
+                      fontSize: 45, fontFamily: 'Moniqa', height: 0.8),
+                ),
+                Padding(padding: EdgeInsets.only(top: 10)),
+                Container(
+                  width: width / 1.3,
+                  height: height / 3.7,
+                  padding: EdgeInsets.all(2), // Border width
+                  decoration: BoxDecoration(
+                      color: Colors.grey[800],
+                      borderRadius: BorderRadius.circular(15.0)),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15.0),
+                    child: SizedBox.fromSize(
+                      size: Size.fromRadius(70), // Image radius
+                      child: Container(
+                          height: height * 0.05,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                                "assets/event.png",
+                              ),
+                              // opacity: 0.60,
+                              fit: BoxFit.cover,
+                            ),
+                          )),
+                    ),
+                  ),
+                ),
+                Padding(padding: EdgeInsets.only(top: 20)),
+                Text(
+                  'Площадь ресторана PINZERIA ® BY BONTEMPI составляет 850 кв.м. Организация торжественных мероприятий проходит в основном зале (до 80 гостей), VIP- зале (до 25 гостей), а также на открытой веранде, в зимний период веранда отапливается.',
+                  style: TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+                Padding(padding: EdgeInsets.only(top: 20)),
+                Text(
+                  'Мы комплексно подходим к созданию праздника мечты! Предоставляем колоритную локацию для фото-сессии, услуги кондитера, флориста, ведущего и банкетный сервис высокого уровня.',
                   style: TextStyle(
                     fontSize: 14,
                   ),
@@ -145,7 +196,8 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                               side: BorderSide(
-                                  color: Colors.white, width: 0.3) // <-- Radius
+                                  color: Color.fromARGB(106, 46, 46, 46),
+                                  width: 0.3) // <-- Radius
                               ),
                           elevation: 5,
                           minimumSize: Size(height * 0.43, width * 0.13),
@@ -158,7 +210,7 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
                             },
                           );
                         },
-                        child: Text('Забронировать столик',
+                        child: Text('Заказать звонок',
                             style: TextStyle(
                                 color: Color.fromARGB(210, 60, 60, 60)))),
                   ]),
