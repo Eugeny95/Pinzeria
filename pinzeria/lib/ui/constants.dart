@@ -12,4 +12,4 @@ const kIconsColor = Color.fromARGB(222, 19, 19, 19);
 const kButtonColor = Color.fromARGB(230, 255, 248, 233);
 
 const kDefaultPadding = 20.0;
-// Сегодня 2 мая 2024 года
+// Сегодня 8 мая 2024 года
