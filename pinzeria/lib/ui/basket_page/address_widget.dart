@@ -118,10 +118,10 @@ class _AddressWidgetState extends State<AddressWidget> {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               gradient: LinearGradient(colors: [
-                Color.fromARGB(255, 70, 69, 69),
-                Color.fromARGB(146, 58, 58, 58),
-                Color.fromARGB(196, 47, 47, 47),
-                Color.fromARGB(255, 94, 94, 94),
+                Color.fromARGB(221, 236, 234, 214),
+                Color.fromARGB(221, 236, 234, 214),
+                Color.fromARGB(221, 236, 234, 214),
+                Color.fromARGB(221, 236, 234, 214),
               ])),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -188,9 +188,8 @@ class _AddressWidgetState extends State<AddressWidget> {
                               contentPadding: EdgeInsets.symmetric(
                                   vertical: 0, horizontal: 0),
                               helperText: 'Улица, дом*',
-                              helperStyle: TextStyle(
-                                  color: Color.fromARGB(209, 255, 255, 255),
-                                  fontSize: 10),
+                              helperStyle:
+                                  TextStyle(color: Colors.black, fontSize: 10),
                             ),
                             child: Autocomplete<String>(
                               optionsBuilder:
@@ -302,6 +301,8 @@ class _AddressWidgetState extends State<AddressWidget> {
                       SizedBox(
                           width: width * 0.2,
                           child: TextField(
+                              cursorColor:
+                                  const Color.fromARGB(255, 40, 40, 40),
                               keyboardType: TextInputType.number,
                               onChanged: (value) {
                                 addressData.flat = int.parse(value);
@@ -313,8 +314,9 @@ class _AddressWidgetState extends State<AddressWidget> {
                               decoration: InputDecoration(
                                 helperText: 'Квартира',
                                 helperStyle: TextStyle(
-                                    color: Color.fromARGB(209, 255, 255, 255),
-                                    fontSize: 10),
+                                    color: Colors.black, fontSize: 10),
+                                hintStyle: TextStyle(
+                                    fontSize: 20.0, color: Colors.redAccent),
                               ))),
                       SizedBox(
                         width: width * 0.15,
@@ -337,9 +339,8 @@ class _AddressWidgetState extends State<AddressWidget> {
                             style: Theme.of(context).textTheme.bodyMedium,
                             decoration: InputDecoration(
                               helperText: 'Подъезд',
-                              helperStyle: TextStyle(
-                                  color: Color.fromARGB(209, 255, 255, 255),
-                                  fontSize: 10),
+                              helperStyle:
+                                  TextStyle(color: Colors.black, fontSize: 10),
                             )),
                       ),
                       SizedBox(
@@ -355,9 +356,8 @@ class _AddressWidgetState extends State<AddressWidget> {
                             style: Theme.of(context).textTheme.bodyMedium,
                             decoration: InputDecoration(
                               helperText: 'Этаж',
-                              helperStyle: TextStyle(
-                                  color: Color.fromARGB(209, 255, 255, 255),
-                                  fontSize: 10),
+                              helperStyle:
+                                  TextStyle(color: Colors.black, fontSize: 10),
                             )),
                       ),
                       SizedBox(
@@ -372,9 +372,8 @@ class _AddressWidgetState extends State<AddressWidget> {
                             style: Theme.of(context).textTheme.bodyMedium,
                             decoration: InputDecoration(
                               helperText: 'Домофон',
-                              helperStyle: TextStyle(
-                                  color: Color.fromARGB(209, 255, 255, 255),
-                                  fontSize: 10),
+                              helperStyle:
+                                  TextStyle(color: Colors.black, fontSize: 10),
                             )),
                       ),
                     ],
@@ -390,7 +389,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                       _output,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Color.fromARGB(255, 213, 213, 213),
+                          color: Colors.black,
                           fontWeight: FontWeight.bold,
                           fontSize: 15),
                     ),

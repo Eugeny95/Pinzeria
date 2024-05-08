@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
 import 'package:pinzeria/buisiness/basket_bloc/basket_bloc_bloc.dart';
 import 'package:pinzeria/buisiness/history_bloc/history_bloc.dart';
@@ -19,10 +21,13 @@ import 'package:badges/badges.dart' as badges;
 import 'ui/basket_page/basket_page.dart';
 
 void main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(MyApp());
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatelessWidget {

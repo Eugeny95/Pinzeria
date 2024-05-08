@@ -64,6 +64,8 @@ dependencies:
   dio: any
   yaml_localizations: ^1.5.0
   flip_card: ^0.7.0
+  flutter_native_splash: ^2.3.10
+ 
  
  
  
@@ -137,7 +139,7 @@ flutter_launcher_icons:
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 flutter_native_splash:
-  image: assets/ValBon.png
+  image: assets/PinBon.png
   background_image: assets/SplashBack.png
   android: true
   ios: true
