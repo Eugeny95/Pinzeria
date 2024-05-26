@@ -118,10 +118,10 @@ class _AddressWidgetState extends State<AddressWidget> {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               gradient: LinearGradient(colors: [
+                Color.fromARGB(221, 249, 247, 231),
                 Color.fromARGB(221, 236, 234, 214),
-                Color.fromARGB(221, 236, 234, 214),
-                Color.fromARGB(221, 236, 234, 214),
-                Color.fromARGB(221, 236, 234, 214),
+                Color.fromARGB(221, 245, 242, 212),
+                Color.fromARGB(221, 202, 201, 187),
               ])),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -312,6 +312,14 @@ class _AddressWidgetState extends State<AddressWidget> {
                               // controller: _addressController,
                               style: Theme.of(context).textTheme.bodyMedium,
                               decoration: InputDecoration(
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color.fromARGB(95, 46, 46, 46)),
+                                ),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color.fromARGB(95, 46, 46, 46)),
+                                ),
                                 helperText: 'Квартира',
                                 helperStyle: TextStyle(
                                     color: Colors.black, fontSize: 10),
@@ -321,6 +329,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                       SizedBox(
                         width: width * 0.15,
                         child: TextFormField(
+                            cursorColor: Color.fromARGB(209, 41, 41, 41),
                             // validator: (value) {
                             //   if (addressData.street == '')
                             //     return ''; //'Введите адрес!';
@@ -338,6 +347,14 @@ class _AddressWidgetState extends State<AddressWidget> {
                             // controller: _addressController,
                             style: Theme.of(context).textTheme.bodyMedium,
                             decoration: InputDecoration(
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(95, 46, 46, 46)),
+                              ),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(95, 46, 46, 46)),
+                              ),
                               helperText: 'Подъезд',
                               helperStyle:
                                   TextStyle(color: Colors.black, fontSize: 10),
@@ -346,6 +363,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                       SizedBox(
                         width: width * 0.15,
                         child: TextField(
+                            cursorColor: Color.fromARGB(209, 41, 41, 41),
                             keyboardType: TextInputType.number,
                             onChanged: (value) {
                               addressData.floor = int.parse(value);
@@ -355,6 +373,14 @@ class _AddressWidgetState extends State<AddressWidget> {
                             // controller: _addressController,
                             style: Theme.of(context).textTheme.bodyMedium,
                             decoration: InputDecoration(
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(95, 46, 46, 46)),
+                              ),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(95, 46, 46, 46)),
+                              ),
                               helperText: 'Этаж',
                               helperStyle:
                                   TextStyle(color: Colors.black, fontSize: 10),
@@ -363,6 +389,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                       SizedBox(
                         width: width * 0.15,
                         child: TextField(
+                            cursorColor: Color.fromARGB(209, 41, 41, 41),
                             onChanged: (value) {
                               addressData.doorphone = value;
                               widget.onChange(addressData);
@@ -371,6 +398,14 @@ class _AddressWidgetState extends State<AddressWidget> {
                             // controller: _addressController,
                             style: Theme.of(context).textTheme.bodyMedium,
                             decoration: InputDecoration(
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(95, 46, 46, 46)),
+                              ),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(95, 46, 46, 46)),
+                              ),
                               helperText: 'Домофон',
                               helperStyle:
                                   TextStyle(color: Colors.black, fontSize: 10),

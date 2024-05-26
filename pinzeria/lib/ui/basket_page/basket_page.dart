@@ -5,7 +5,9 @@ import 'package:data_layer/network/order_repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:online_payments/acquiring.dart';
 import 'package:online_payments/payment_widget.dart';
 import 'package:toggle_switch/toggle_switch.dart';
@@ -31,8 +33,10 @@ String mytime = '30 минут';
 String phone = '';
 
 class BasketPageState extends State<BasketPage> {
+  TextEditingController dateCtl = TextEditingController();
   int counter = 1;
   int toggleIndex = 0;
+  DateTime completeBefore = DateTime.now().add(Duration(minutes: 16));
   String comment = '';
   double totalCost = 0;
   AddressData addressData = AddressData(
@@ -115,6 +119,7 @@ class BasketPageState extends State<BasketPage> {
             user: BlocProvider.of<AuthBloc>(context).getUser(),
             orderServiceType: orderServiceType,
             paymentType: selectedPaymentType.paymentType,
+            completeBefore: completeBefore,
             comment: comment +
                 '  Комментарий к оплате: ' +
                 (selectedPaymentType.comment ?? ''));
@@ -432,48 +437,181 @@ class BasketPageState extends State<BasketPage> {
                                             : Container())),
                                 Padding(
                                     padding:
-                                        EdgeInsets.only(top: height * 0.01)),
-                                TextFormField(
-                                  keyboardType: TextInputType.multiline,
-                                  maxLines: 5,
-                                  minLines: 1,
+                                        EdgeInsets.only(top: height * 0.02)),
+                                SizedBox(
+                                  width: width * 0.9,
+                                  height: height * 0.06,
+                                  child: TextField(
+                                    cursorColor:
+                                        Color.fromARGB(209, 41, 41, 41),
+                                    controller: dateCtl,
+                                    // inputFormatters: <TextInputFormatter>[_dateFormatter],
+                                    decoration: InputDecoration(
+                                      floatingLabelBehavior:
+                                          FloatingLabelBehavior.never,
+                                      enabledBorder: UnderlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color:
+                                                Color.fromARGB(95, 46, 46, 46)),
+                                      ),
+                                      prefixIcon: const Icon(Icons.timelapse,
+                                          size: 18,
+                                          color:
+                                              Color.fromARGB(210, 234, 44, 44)),
+                                      labelText: 'Как можно скорее',
+                                      labelStyle: TextStyle(
+                                          color:
+                                              Color.fromARGB(217, 49, 49, 49),
+                                          fontSize: 14),
+                                      helperText: '      Выберите время',
+                                      helperStyle: TextStyle(
+                                          color: Colors.black, fontSize: 12),
+                                      hintStyle: TextStyle(
+                                          fontSize: 20.0,
+                                          color: Colors.redAccent),
+                                    ),
+                                    onChanged: (String value) {
+                                      //  completeBefore = value;
+                                    },
+                                    onTap: () async {
+                                      DateTime date = DateTime.now();
+                                      FocusScope.of(context)
+                                          .requestFocus(new FocusNode());
+                                      completeBefore =
+                                          await showCupertinoModalPopup(
+                                                  context: context,
+                                                  builder:
+                                                      (BuildContext builder) {
+                                                    return Container(
+                                                        height: MediaQuery.of(
+                                                                    context)
+                                                                .copyWith()
+                                                                .size
+                                                                .height *
+                                                            0.4,
+                                                        color: const Color
+                                                            .fromARGB(
+                                                            255, 0, 0, 0),
+                                                        child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            TextButton(
+                                                              child: Text(
+                                                                  'Применить',
+                                                                  style: TextStyle(
+                                                                      color: Color.fromARGB(
+                                                                          219,
+                                                                          255,
+                                                                          255,
+                                                                          255),
+                                                                      fontSize:
+                                                                          14)),
+                                                              onPressed: () {
+                                                                Navigator.pop(
+                                                                    context);
+                                                              },
+                                                            ),
+                                                            Container(
+                                                              height:
+                                                                  height * 0.3,
+                                                              child:
+                                                                  CupertinoDatePicker(
+                                                                use24hFormat:
+                                                                    true,
+                                                                mode: CupertinoDatePickerMode
+                                                                    .dateAndTime,
+                                                                initialDateTime:
+                                                                    // DateTime
+                                                                    //     .now(),
+                                                                    DateTime.now().add(
+                                                                        Duration(
+                                                                            hours:
+                                                                                1)),
+                                                                minimumDate: DateTime
+                                                                        .now()
+                                                                    .add(Duration(
+                                                                        minutes:
+                                                                            20)),
+                                                                maximumDate: DateTime(
+                                                                    DateTime.now()
+                                                                        .year,
+                                                                    DateTime.now()
+                                                                            .month +
+                                                                        2,
+                                                                    DateTime.now()
+                                                                        .day),
+                                                                onDateTimeChanged:
+                                                                    (val) {
+                                                                  date = val;
+                                                                },
+                                                              ),
+                                                            ),
+                                                            SizedBox(
+                                                              height:
+                                                                  height * 0.03,
+                                                            )
+                                                          ],
+                                                        ));
+                                                  }) ??
+                                              date;
 
-                                  textCapitalization:
-                                      TextCapitalization.sentences,
+                                      dateCtl.text =
+                                          DateFormat('dd.MM.yyyy hh:mm')
+                                              .format(completeBefore);
+                                    },
+                                  ),
+                                ),
+                                Padding(
+                                    padding:
+                                        EdgeInsets.only(top: height * 0.025)),
+                                SizedBox(
+                                  // width: ,
+                                  child: TextFormField(
+                                    keyboardType: TextInputType.multiline,
+                                    maxLines: 5,
+                                    minLines: 1,
 
-                                  // validator: (value) => Validator.isEmptyValid(value!),
-                                  onChanged: (String value) {
-                                    comment = value;
-                                  },
-                                  cursorColor: Color.fromARGB(194, 42, 42, 42),
-                                  decoration: InputDecoration(
-                                      border: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(10)),
-                                      focusedBorder: OutlineInputBorder(
+                                    textCapitalization:
+                                        TextCapitalization.sentences,
+
+                                    // validator: (value) => Validator.isEmptyValid(value!),
+                                    onChanged: (String value) {
+                                      comment = value;
+                                    },
+                                    cursorColor:
+                                        Color.fromARGB(194, 42, 42, 42),
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
+                                        focusedBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            borderSide: const BorderSide(
+                                                color: Color.fromARGB(
+                                                    160, 24, 24, 24),
+                                                width: 1.0)),
+                                        enabledBorder: OutlineInputBorder(
                                           borderRadius:
                                               BorderRadius.circular(10),
-                                          borderSide: const BorderSide(
-                                              color: Color.fromARGB(
-                                                  160, 24, 24, 24),
-                                              width: 1.0)),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                        borderSide: BorderSide(
-                                          color:
-                                              Color.fromARGB(172, 29, 29, 29),
-                                          width: 1.0,
+                                          borderSide: BorderSide(
+                                            color:
+                                                Color.fromARGB(172, 29, 29, 29),
+                                            width: 1.0,
+                                          ),
                                         ),
-                                      ),
-                                      prefixIcon: const Icon(Icons.comment,
-                                          size: 20,
-                                          color:
-                                              Color.fromARGB(210, 45, 45, 45)),
-                                      labelText: 'Комментарий к заказу',
-                                      labelStyle: const TextStyle(
-                                          fontSize: 12,
-                                          color:
-                                              Color.fromARGB(205, 32, 32, 32))),
+                                        prefixIcon: const Icon(Icons.comment,
+                                            size: 20,
+                                            color: Color.fromARGB(
+                                                210, 45, 45, 45)),
+                                        labelText: 'Комментарий к заказу',
+                                        labelStyle: const TextStyle(
+                                            fontSize: 12,
+                                            color: Color.fromARGB(
+                                                205, 32, 32, 32))),
+                                  ),
                                 ),
                                 Padding(
                                     padding:

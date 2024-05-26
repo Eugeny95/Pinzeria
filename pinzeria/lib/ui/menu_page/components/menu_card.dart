@@ -40,15 +40,34 @@ class MenuCategoryItem extends StatelessWidget {
         Padding(
             padding: const EdgeInsets.only(left: 10),
             child: GridView.count(
-              padding: const EdgeInsets.all(5),
-              crossAxisSpacing: 1,
-              mainAxisSpacing: 3,
+              // scrollDirection: Axis.horizontal,
+              // physics: const NeverScrollableScrollPhysics(),
+              // padding: const EdgeInsets.all(15),
+              // crossAxisCount: 10,
+              // crossAxisSpacing: 6,
+              // shrinkWrap: true,
+              // primary: true,
+              //Screensize grid count
+              // childAspectRatio: 0.90, //1.0
+              // mainAxisSpacing: 0.2, //1.0
+              // crossAxisSpacing: 4.0,
+              // crossAxisSpacing: 1,
+              // mainAxisSpacing: 3,
+
               childAspectRatio: 0.76,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 2,
               children: [...items],
-            ))
+            )
+
+            // ListView(
+            //     shrinkWrap: true,
+            //     physics: const NeverScrollableScrollPhysics(),
+            //     scrollDirection: Axis.horizontal,
+            //     children: [...items])
+
+            )
         // Center(
         //   child: GridView(
         //     gridDelegate:

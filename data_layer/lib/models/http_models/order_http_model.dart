@@ -16,6 +16,7 @@ class OrderHttpModel {
   AddressHttpModel? adress;
   PaymentType? type_payment;
   double? summa;
+  DateTime? completeBefore;
   String? comment;
   OrderHttpModel(
       {required this.type_order,
@@ -24,7 +25,8 @@ class OrderHttpModel {
       required this.adress,
       required this.comment,
       required this.summa,
-      required this.type_payment});
+      required this.type_payment,
+      required this.completeBefore});
 
   factory OrderHttpModel.fromJson(Map<String, dynamic> json) =>
       _$OrderHttpModelFromJson(json);

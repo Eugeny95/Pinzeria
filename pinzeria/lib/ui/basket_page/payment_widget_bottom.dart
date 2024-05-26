@@ -50,7 +50,7 @@ class PaymentWidgetState extends State<PaymentWidgetBottom> {
             'Выберите способ оплаты',
             style: TextStyle(
                 // fontFamily: 'Moniqa',
-                color: Colors.white,
+                color: Color.fromARGB(219, 38, 38, 38),
                 fontSize: 17,
                 fontWeight: FontWeight.normal),
           ),
@@ -63,8 +63,8 @@ class PaymentWidgetState extends State<PaymentWidgetBottom> {
             cornerRadius: 10,
             borderColor: [Color.fromARGB(96, 255, 255, 255)],
             borderWidth: 1,
-            activeBgColor: [kContentColorLightTheme],
-            activeFgColor: const Color.fromARGB(255, 255, 255, 255),
+            activeBgColor: [kFourthColor.withOpacity(0.8)],
+            activeFgColor: Color.fromARGB(189, 255, 255, 255),
             inactiveBgColor: Color.fromARGB(255, 106, 106, 106),
             inactiveFgColor: Color.fromARGB(189, 255, 255, 255),
             initialLabelIndex: toggleIndex,
@@ -94,7 +94,7 @@ class PaymentWidgetState extends State<PaymentWidgetBottom> {
                           Text('Нужна сдача с: ',
                               style: (TextStyle(
                                   fontSize: 15,
-                                  color: Color.fromARGB(235, 224, 224, 224)))),
+                                  color: Color.fromARGB(235, 45, 45, 45)))),
                           ToggleSwitch(
                             minWidth: width * 0.15,
                             minHeight: height * 0.03,
@@ -103,7 +103,7 @@ class PaymentWidgetState extends State<PaymentWidgetBottom> {
                             cornerRadius: 10,
                             // borderColor: [Color.fromARGB(96, 255, 255, 255)],
                             borderWidth: 1,
-                            activeBgColor: [kContentColorLightTheme],
+                            activeBgColor: [kFourthColor.withOpacity(0.8)],
                             activeFgColor:
                                 const Color.fromARGB(255, 255, 255, 255),
                             inactiveBgColor: Color.fromARGB(255, 106, 106, 106),

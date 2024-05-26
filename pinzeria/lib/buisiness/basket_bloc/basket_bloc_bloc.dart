@@ -133,6 +133,7 @@ class BasketBloc extends Bloc<BasketEvent, BasketState> {
       required UserData user,
       required OrderServiceType orderServiceType,
       required PaymentType paymentType,
+      required DateTime completeBefore,
       required String comment}) async {
     List<PositionHttpModel> itemsHttp = [];
     for (int i = 0; i < positions.length; i++) {
@@ -154,6 +155,7 @@ class BasketBloc extends Bloc<BasketEvent, BasketState> {
         phone: user.username,
         items: itemsHttp,
         adress: addressHttpModel,
+        completeBefore: completeBefore,
         comment: comment,
         summa: totalCost + addressData.deliveryCost,
         type_payment: paymentType);

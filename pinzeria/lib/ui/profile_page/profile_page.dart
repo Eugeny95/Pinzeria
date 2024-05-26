@@ -300,7 +300,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             style: TextStyle(
                                 fontFamily: 'Moniqa',
                                 color: Color.fromARGB(207, 34, 34, 34),
-                                fontSize: height * 0.032,
+                                fontSize: height * 0.028,
                                 height: 0.9,
                                 fontWeight: FontWeight.bold),
                           ),
