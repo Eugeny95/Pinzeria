@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
 import 'package:pinzeria/ui/constants.dart';
@@ -25,15 +26,15 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return Stack(
+    return ListView(
       children: [
         Container(
           width: width * 0.98,
           child: Column(children: [
-            Padding(padding: EdgeInsets.only(top: height * 0.06)),
+            Padding(padding: EdgeInsets.only(top: height * 0.005)),
             Container(
               width: MediaQuery.of(context).size.width,
-              height: height * 0.15,
+              height: height * 0.13,
               decoration: BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.fitHeight,
@@ -294,15 +295,25 @@ class _ProfilePageState extends State<ProfilePage> {
                           // button text
                         ),
                         child: Center(
-                          child: Text(
-                            "3D тур по ресторану",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: 'Moniqa',
-                                color: Color.fromARGB(207, 34, 34, 34),
-                                fontSize: height * 0.028,
-                                height: 0.9,
-                                fontWeight: FontWeight.bold),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "3D тур по ресторану   ",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontFamily: 'Moniqa',
+                                    color: Color.fromARGB(207, 34, 34, 34),
+                                    fontSize: height * 0.025,
+                                    height: 0.9,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Icon(
+                                Icons.view_in_ar_outlined,
+                                size: 25,
+                                color: kIconsColor,
+                              ),
+                            ],
                           ),
                         )),
                     onTap: () async {
@@ -314,9 +325,66 @@ class _ProfilePageState extends State<ProfilePage> {
                         );
                       }
                     }),
+                SizedBox(
+                  height: height * 0.007,
+                ),
+                GestureDetector(
+                  child: Container(
+                      width: width * 0.93,
+                      height: height * 0.05,
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 3,
+                            offset: Offset(0, 2), // changes position of shadow
+                          ),
+                        ],
+                        border: Border.all(
+                            width: 2, color: Color.fromARGB(74, 88, 88, 88)),
+                        borderRadius: BorderRadius.circular(10.0),
+
+                        color: kButtonColor,
+                        image: DecorationImage(
+                            image: AssetImage(
+                              "assets/PinBon.png",
+                            ),
+                            opacity: 0.1,
+                            fit: BoxFit.fitHeight),
+                        // button text
+                      ),
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Поделиться приложением    ",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontFamily: 'Moniqa',
+                                  color: Color.fromARGB(207, 34, 34, 34),
+                                  fontSize: height * 0.024,
+                                  height: 0.9,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Icon(
+                              Icons.send,
+                              size: 25,
+                              color: kIconsColor,
+                            ),
+                          ],
+                        ),
+                      )),
+                  onTap: () async {
+                    Share.share(
+                        'Посмотрите новое  мобильное приложение https://apps.apple.com/ru/app/youtube/id544007664',
+                        subject: 'Pinzeria Bontempi');
+                  },
+                ),
               ],
             ),
-            Padding(padding: EdgeInsets.only(top: height * 0.04)),
+            Padding(padding: EdgeInsets.only(top: height * 0.02)),
             Align(
                 alignment: Alignment.center, //or choose another Alignment
                 child: Container(

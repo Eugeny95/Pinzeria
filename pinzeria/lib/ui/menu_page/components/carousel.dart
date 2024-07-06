@@ -67,30 +67,30 @@ class Cerousel extends StatelessWidget {
         backgroundColor: Color.fromARGB(221, 236, 234, 214),
         toolbarHeight: height * 0.07,
         actions: [
-          FloatingActionButton.small(
-            backgroundColor: kPrimaryColor,
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return TableDialog();
-                },
-              );
-            },
-            child: Icon(
-              Icons.table_bar_outlined,
-              size: 22,
-              color: kFourthColor,
-            ),
-            shape: RoundedRectangleBorder(
-                side: BorderSide(
-                    width: 2, color: Color.fromARGB(49, 255, 255, 255)),
-                borderRadius: BorderRadius.circular(100)),
-          ),
+          // FloatingActionButton.small(
+          //   backgroundColor: kPrimaryColor,
+          //   onPressed: () {
+          //     showDialog(
+          //       context: context,
+          //       builder: (BuildContext context) {
+          //         return TableDialog();
+          //       },
+          //     );
+          //   },
+          //   child: Icon(
+          //     Icons.table_bar_outlined,
+          //     size: 22,
+          //     color: kFourthColor,
+          //   ),
+          //   shape: RoundedRectangleBorder(
+          //       side: BorderSide(
+          //           width: 2, color: Color.fromARGB(49, 255, 255, 255)),
+          //       borderRadius: BorderRadius.circular(100)),
+          // ),
         ],
         title: Container(
           width: MediaQuery.of(context).size.width,
-          height: height * 0.08,
+          height: height * 0.06,
           decoration: BoxDecoration(
             image: DecorationImage(
                 fit: BoxFit.fitHeight, image: AssetImage('assets/PinBon2.png')),

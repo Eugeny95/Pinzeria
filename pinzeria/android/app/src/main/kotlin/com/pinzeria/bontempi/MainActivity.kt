@@ -1,4 +1,4 @@
-package com.yappa.pinzeria
+package com.pinzeria.bontempi
 
 import io.flutter.embedding.android.FlutterActivity
 

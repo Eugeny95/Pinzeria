@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pinzeria/buisiness/menu_page_bloc/menu_bloc/menu_bloc.dart';
 import 'package:pinzeria/buisiness/menu_page_bloc/select_category_bloc/bloc/select_category_bloc.dart';
 import 'package:pinzeria/ui/constants.dart';
 import 'package:pinzeria/ui/menu_page/components/carousel.dart';
+import 'package:pinzeria/ui/menu_page/components/horizontal_menu_scroll.dart';
 import 'package:pinzeria/ui/menu_page/components/menu_card.dart';
 import 'package:pinzeria/ui/menu_page/components/table_dialog.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -54,7 +56,7 @@ class _MenuPageState extends State<MenuPage> {
                 lock = false;
               });
             },
-            child: MenuCategoryItem(
+            child: HorizontalMenuCategoryItem(
               key: globalKey,
               title: state.menuHttpModel!.menu![i].category_name!,
               items: List.generate(
@@ -73,6 +75,43 @@ class _MenuPageState extends State<MenuPage> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      floatingActionButton: FloatingActionButton.extended(
+        label: Column(
+          children: [
+            Text(
+              'Забронировать',
+              style: TextStyle(fontSize: 10),
+            ),
+            Text(
+              'столик',
+              style: TextStyle(fontSize: 10),
+            ),
+          ],
+        ),
+        icon: Icon(Icons.table_bar),
+        backgroundColor: kPrimaryColor.withOpacity(0.85),
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return TableDialog();
+            },
+          );
+        },
+        // child: Row(
+        //   children: [
+        //     Text('Table'),
+        //     Icon(
+        //       Icons.table_bar_outlined,
+        //       size: 22,
+        //       color: kFourthColor,
+        //     ),
+        //   ],
+        // ),
+        shape: RoundedRectangleBorder(
+            side: BorderSide(width: 1, color: Color.fromARGB(68, 23, 23, 23)),
+            borderRadius: BorderRadius.circular(10)),
+      ),
       body: Container(
         color: const Color.fromARGB(0, 62, 62, 62),
         child: CustomScrollView(
@@ -83,7 +122,7 @@ class _MenuPageState extends State<MenuPage> {
                 pinned: true,
                 snap: false,
                 floating: false,
-                expandedHeight: height / 3.0,
+                expandedHeight: height / 2.7,
                 // backgroundColor: Colors.transparent,
                 flexibleSpace: Stack(children: [
                   Container(
@@ -153,7 +192,7 @@ class _MenuPageState extends State<MenuPage> {
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: (index ==
                                                 stateCategory.selectedIndex)
-                                            ? Color.fromARGB(255, 236, 234, 214)
+                                            ? Color.fromARGB(255, 243, 236, 230)
                                             : kPrimaryColor.withOpacity(0.6),
                                         minimumSize:
                                             Size(height * 0.12, width * 0.25),
@@ -177,12 +216,15 @@ class _MenuPageState extends State<MenuPage> {
                                           state.menuHttpModel!.menu![index]
                                               .category_name
                                               .toString(),
-                                          style: const TextStyle(
+                                          style: TextStyle(
                                               // fontFamily: 'Moniqa',
-                                              fontWeight: FontWeight.w700,
+                                              fontWeight: FontWeight.w600,
+                                              fontFamily:
+                                                  GoogleFonts.merriweather()
+                                                      .fontFamily,
                                               fontSize: 12,
                                               color: Color.fromARGB(
-                                                  228, 218, 58, 47))),
+                                                  243, 218, 58, 47))),
                                     ),
                                   );
                                 });

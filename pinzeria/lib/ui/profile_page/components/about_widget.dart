@@ -32,13 +32,13 @@ class AboutWidget extends StatelessWidget {
                   height: height * 0.02,
                 ),
                 Text(
-                  'Семейный ресторан авторской \n итальянской кухни в Воронеже',
+                  '  Семейный ресторан авторской \n         итальянской кухни в Воронеже',
                   style: TextStyle(
                       fontFamily: GoogleFonts.merriweather().fontFamily,
                       color: Colors.white,
-                      fontSize: 21,
+                      fontSize: 19,
                       height: 0.95,
-                      fontWeight: FontWeight.normal),
+                      fontWeight: FontWeight.w400),
                 ),
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,7 +62,10 @@ class AboutWidget extends StatelessWidget {
                                     child: Text(
                                       ' Воронеж, улица Урицкого, 70',
                                       style: TextStyle(
-                                          fontSize: 15, color: Colors.white),
+                                          fontFamily: GoogleFonts.merriweather()
+                                              .fontFamily,
+                                          fontSize: 14,
+                                          color: Colors.white),
                                     ),
                                     onTap: () async {
                                       final url =
@@ -111,10 +114,14 @@ class AboutWidget extends StatelessWidget {
                   // crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Container(
-                      width: width * 0.8,
+                      width: width * 0.85,
                       child: Text(
                         'Время работы ресторана   ',
-                        style: TextStyle(fontSize: 13, color: Colors.white),
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.white,
+                          fontFamily: GoogleFonts.merriweather().fontFamily,
+                        ),
                         textAlign: TextAlign.right,
                       ),
                     ),
@@ -149,7 +156,7 @@ class AboutWidget extends StatelessWidget {
                     Text(
                       'Время работы ресторана:',
                       style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 14,
                         fontFamily: GoogleFonts.merriweather().fontFamily,
                         color: Colors.white,
                       ),
@@ -215,7 +222,7 @@ class AboutWidget extends StatelessWidget {
                     Text(
                       'Время работы доставки:',
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 13,
                         fontFamily: GoogleFonts.merriweather().fontFamily,
                         color: Colors.white,
                       ),

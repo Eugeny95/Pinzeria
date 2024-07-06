@@ -29,13 +29,13 @@ class TableDialogState extends State<TableDialog> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return AlertDialog(
-      backgroundColor: Color.fromARGB(255, 236, 234, 214),
+      backgroundColor: Color.fromARGB(255, 247, 242, 238),
       insetPadding: EdgeInsets.all(30),
       title: const Column(
         children: [
           Text(
             'Забронировать столик',
-            style: TextStyle(color: Color.fromARGB(248, 24, 24, 24)),
+            style: TextStyle(color: Color.fromARGB(219, 24, 24, 24)),
           ),
         ],
       ),
@@ -47,7 +47,7 @@ class TableDialogState extends State<TableDialog> {
             const Text(
               'С Вами свяжется наш менеджер и уточнит детали',
               style: TextStyle(
-                  color: Color.fromARGB(248, 24, 24, 24), fontSize: 12),
+                  color: Color.fromARGB(196, 24, 24, 24), fontSize: 12),
             ),
             Form(
                 key: _formKey,
@@ -57,7 +57,7 @@ class TableDialogState extends State<TableDialog> {
                     Padding(padding: EdgeInsets.only(top: height * 0.01)),
                     TextFormField(
                       textCapitalization: TextCapitalization.words,
-                      cursorColor: Color.fromARGB(248, 24, 24, 24),
+                      cursorColor: Color.fromARGB(213, 24, 24, 24),
                       validator: (value) => Validator.isEmptyValid(value!),
                       onChanged: (String value) {
                         firstname = value;
@@ -68,24 +68,24 @@ class TableDialogState extends State<TableDialog> {
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: const BorderSide(
-                                  color: Color.fromARGB(248, 24, 24, 24),
+                                  color: Color.fromARGB(203, 24, 24, 24),
                                   width: 2.0)),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(
-                              color: Color.fromARGB(231, 29, 29, 29),
+                              color: Color.fromARGB(188, 29, 29, 29),
                               width: 2.0,
                             ),
                           ),
                           prefixIcon: const Icon(Icons.person_add,
-                              color: Color.fromARGB(248, 24, 24, 24)),
+                              color: Color.fromARGB(201, 24, 24, 24)),
                           labelText: 'Имя',
                           labelStyle: const TextStyle(
-                              color: Color.fromARGB(248, 24, 24, 24))),
+                              color: Color.fromARGB(215, 24, 24, 24))),
                     ),
                     Padding(padding: EdgeInsets.only(top: height * 0.01)),
                     TextFormField(
-                      cursorColor: const Color.fromARGB(248, 24, 24, 24),
+                      cursorColor: Color.fromARGB(205, 24, 24, 24),
                       keyboardType: TextInputType.number,
                       inputFormatters: <TextInputFormatter>[
                         FilteringTextInputFormatter.allow(RegExp(r'[0-9.,]'))
@@ -101,21 +101,21 @@ class TableDialogState extends State<TableDialog> {
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: const BorderSide(
-                                  color: Color.fromARGB(248, 24, 24, 24),
+                                  color: Color.fromARGB(212, 24, 24, 24),
                                   width: 2.0)),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(
-                              color: Color.fromARGB(231, 29, 29, 29),
+                              color: Color.fromARGB(192, 29, 29, 29),
                               width: 2.0,
                             ),
                           ),
                           prefixIcon: const Icon(Icons.phone_iphone,
-                              color: Color.fromARGB(248, 24, 24, 24)),
+                              color: Color.fromARGB(197, 24, 24, 24)),
                           labelText: 'Телефон',
                           prefixText: '+7',
                           labelStyle: const TextStyle(
-                              color: Color.fromARGB(248, 24, 24, 24))),
+                              color: Color.fromARGB(206, 24, 24, 24))),
                     ),
                     Padding(padding: EdgeInsets.only(top: height * 0.01)),
 
@@ -137,8 +137,7 @@ class TableDialogState extends State<TableDialog> {
                             ),
                             elevation: 5,
                             minimumSize: Size(height * 0.75, width * 0.12),
-                            backgroundColor:
-                                const Color.fromARGB(255, 28, 28, 28)),
+                            backgroundColor: Color.fromARGB(232, 28, 28, 28)),
                         onPressed: () async {
                           if (!_formKey.currentState!.validate()) return;
                           try {
@@ -169,7 +168,7 @@ class TableDialogState extends State<TableDialog> {
                     TextButton(
                       child: const Text('Отмена',
                           style: TextStyle(
-                              color: Color.fromARGB(248, 24, 24, 24),
+                              color: Color.fromARGB(202, 24, 24, 24),
                               fontSize: 14)),
                       onPressed: () {
                         Navigator.pop(context);

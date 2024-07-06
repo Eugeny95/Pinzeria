@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:online_payments/acquiring.dart';
 import 'package:online_payments/payment_widget.dart';
@@ -162,7 +163,10 @@ class BasketPageState extends State<BasketPage> {
           iconTheme: IconThemeData(color: Color.fromARGB(180, 0, 0, 0)),
           backgroundColor: kPrimaryColor,
           title: Text('Оформление заказа',
-              style: TextStyle(color: Color.fromARGB(201, 20, 20, 20)))),
+              style: TextStyle(
+                color: Color.fromARGB(201, 20, 20, 20),
+                fontFamily: GoogleFonts.merriweather().fontFamily,
+              ))),
       body: BlocBuilder<BasketBloc, BasketState>(
         builder: (context, state) {
           final _formKey = GlobalKey<FormState>();
@@ -177,7 +181,7 @@ class BasketPageState extends State<BasketPage> {
                         width: width * 0.99,
                         child: Card(
                             elevation: 15,
-                            color: Color.fromARGB(255, 255, 255, 238),
+                            color: Color.fromARGB(255, 253, 251, 248),
                             child: Column(
                               children: [
                                 const ListTile(
@@ -558,7 +562,7 @@ class BasketPageState extends State<BasketPage> {
                                               date;
 
                                       dateCtl.text =
-                                          DateFormat('dd.MM.yyyy hh:mm')
+                                          DateFormat('dd.MM.yyyy HH:mm')
                                               .format(completeBefore);
                                     },
                                   ),

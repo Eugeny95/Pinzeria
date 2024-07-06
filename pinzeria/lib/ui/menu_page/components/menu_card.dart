@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:data_layer/models/http_models/dish_http_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
 import 'package:pinzeria/buisiness/basket_bloc/basket_bloc_bloc.dart';
 import 'package:pinzeria/ui/constants.dart';
@@ -113,8 +114,7 @@ class MenuCard extends StatelessWidget {
           Container(
             width: width / 2.3,
             height: height / 3.6,
-            padding: const EdgeInsets.only(top: 4.0),
-            margin: const EdgeInsets.symmetric(horizontal: 1, vertical: 1),
+            margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -127,18 +127,24 @@ class MenuCard extends StatelessWidget {
               border:
                   Border.all(width: 2, color: Color.fromARGB(74, 88, 88, 88)),
               borderRadius: BorderRadius.circular(15.0),
-              color: Color.fromARGB(221, 236, 234, 214),
+              color: Color.fromARGB(255, 245, 240, 235),
             ),
             child: Column(children: [
               Container(
-                width: width / 2.4,
-                height: height / 7.6,
+                width: width / 2.38,
+                height: height / 6.7,
                 // padding: const EdgeInsets.all(2), // Border width
                 decoration: BoxDecoration(
                     color: Colors.grey[800],
-                    borderRadius: BorderRadius.circular(15.0)),
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(15),
+                      topLeft: Radius.circular(15),
+                    )),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15.0),
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(15),
+                    topLeft: Radius.circular(15),
+                  ),
                   child: SizedBox.fromSize(
                     size: const Size.fromRadius(70), // Image radius
                     child: CachedNetworkImage(
@@ -179,14 +185,16 @@ class MenuCard extends StatelessWidget {
                 height: height * 0.005,
               ),
               SizedBox(
-                height: height / 17,
+                height: height / 22,
                 width: width * 0.41,
                 child: Text(
                   dishHttpModel.name ?? '',
                   textDirection: TextDirection.ltr,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontSize: 13,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Color.fromARGB(215, 33, 33, 33),
+                    fontFamily: GoogleFonts.merriweather().fontFamily,
                     fontWeight: FontWeight.normal,
                     height: 0.97,
                   ),
@@ -204,8 +212,9 @@ class MenuCard extends StatelessWidget {
                           '${dishHttpModel.energyFullAmount!.toInt()} ккал',
                           textDirection: TextDirection.ltr,
                           textAlign: TextAlign.right,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 8,
+                            fontFamily: GoogleFonts.merriweather().fontFamily,
                             fontWeight: FontWeight.normal,
                           ),
                         )
@@ -223,8 +232,9 @@ class MenuCard extends StatelessWidget {
                           ' ${(dishHttpModel.weight! * 1000).toInt()} гр',
                           textDirection: TextDirection.ltr,
                           textAlign: TextAlign.right,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 8,
+                            fontFamily: GoogleFonts.merriweather().fontFamily,
                             fontWeight: FontWeight.normal,
                           ),
                         )
@@ -247,10 +257,11 @@ class MenuCard extends StatelessWidget {
                   child: Text(
                     '${dishHttpModel.currentPrice!.toInt()} ₽',
                     textDirection: TextDirection.ltr,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w600,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
                       fontSize: 13,
-                      color: Color.fromARGB(204, 59, 59, 59),
+                      fontFamily: GoogleFonts.merriweather().fontFamily,
+                      color: Color.fromARGB(217, 39, 39, 39),
                     ),
                   ),
                 ),

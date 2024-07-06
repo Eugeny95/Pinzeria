@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pinzeria/buisiness/history_bloc/history_bloc.dart';
 import 'package:pinzeria/ui/constants.dart';
 import 'package:pinzeria/ui/store_page/components/history_preview.dart';
@@ -33,7 +34,10 @@ class StorePageState extends State<StorePage> {
         appBar: AppBar(
             backgroundColor: kPrimaryColor,
             title: Text('История заказов',
-                style: TextStyle(color: Color.fromARGB(255, 20, 20, 20)))),
+                style: TextStyle(
+                  color: Color.fromARGB(255, 20, 20, 20),
+                  fontFamily: GoogleFonts.merriweather().fontFamily,
+                ))),
         body: BlocBuilder<HistoryBloc, HistoryState>(
           builder: (context, state) {
             if (state.status == HistoryStatus.success)

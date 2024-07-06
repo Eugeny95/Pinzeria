@@ -65,6 +65,10 @@ dependencies:
   yaml_localizations: ^1.5.0
   flip_card: ^0.7.0
   flutter_native_splash: ^2.3.10
+  change_app_package_name: ^1.2.0
+  firebase_messaging: ^14.7.9
+  firebase_core : any
+  share_plus: ^9.0.0
  
  
  

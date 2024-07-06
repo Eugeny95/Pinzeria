@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pinzeria/ui/constants.dart';
 import 'package:pinzeria/ui/menu_page/components/table_dialog.dart';
 
@@ -33,10 +34,13 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
               children: [
                 Padding(padding: EdgeInsets.only(top: 20)),
                 Text(
-                  'О нас',
-                  style: TextStyle(fontSize: 80, fontFamily: 'Moniqa'),
+                  'Pinzeria Bontempi',
+                  style: TextStyle(
+                      fontSize: 35,
+                      fontFamily: GoogleFonts.merriweather().fontFamily,
+                      height: 0.85),
                 ),
-                Padding(padding: EdgeInsets.only(top: 10)),
+                Padding(padding: EdgeInsets.only(top: 15)),
                 Text(
                   'Это приятное место, которое завораживает своей домашней приятной атмосферой, удивительными блюдами и вкусами.',
                   style: TextStyle(
@@ -59,15 +63,19 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
                 Text(
                   'Пинца, это новое слово в итальянской кухне',
                   style: TextStyle(
-                      fontSize: 60, fontFamily: 'Moniqa', height: 0.8),
+                      fontSize: 30,
+                      fontFamily: GoogleFonts.merriweather().fontFamily,
+                      height: 0.9),
                 ),
+                Padding(padding: EdgeInsets.only(top: 15)),
                 Text(
                   'Несколько слов о рецептуре',
                   style: TextStyle(
-                      fontSize: 25,
-                      fontFamily: 'Moniqa',
+                      fontSize: 15,
+                      fontFamily: GoogleFonts.merriweather().fontFamily,
                       fontWeight: FontWeight.normal),
                 ),
+                Padding(padding: EdgeInsets.only(top: 5)),
                 Container(
                   width: width / 1.3,
                   height: height / 3.7,
@@ -139,13 +147,15 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
                           },
                           child: Text('Забронировать столик',
                               style: TextStyle(
-                                  color: Color.fromARGB(210, 60, 60, 60)))),
+                                  color: Color.fromARGB(210, 27, 27, 27)))),
                     ])),
                 Padding(padding: EdgeInsets.only(top: 20)),
                 Text(
                   'Организация торжественных и деловых мероприятий',
                   style: TextStyle(
-                      fontSize: 45, fontFamily: 'Moniqa', height: 0.8),
+                      fontSize: 30,
+                      fontFamily: GoogleFonts.merriweather().fontFamily,
+                      height: 1),
                 ),
                 Padding(padding: EdgeInsets.only(top: 10)),
                 Container(
@@ -212,7 +222,7 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
                         },
                         child: Text('Заказать звонок',
                             style: TextStyle(
-                                color: Color.fromARGB(210, 60, 60, 60)))),
+                                color: Color.fromARGB(210, 33, 33, 33)))),
                   ]),
                 ),
                 Padding(padding: EdgeInsets.only(top: 40)),

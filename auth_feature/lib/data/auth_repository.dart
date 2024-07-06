@@ -7,6 +7,7 @@ Future<UserData> registerInServer(UserData user, String registerUrl) async {
   try {
     print(user.toJson());
     Response response = await Dio().post(registerUrl, data: user.toJson());
+    print(user.toJson());
 
     user.accessToken = response.data['access_token'].toString();
 

@@ -1,5 +1,6 @@
 import 'package:data_layer/models/db_models/history_model.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PositionString extends StatefulWidget {
   PositionDbModel positionDbModel;
@@ -27,7 +28,8 @@ class _PositionStringState extends State<PositionString> {
           child: Text(widget.positionDbModel.name!,
               style: TextStyle(
                   fontWeight: FontWeight.normal,
-                  color: Color.fromARGB(255, 229, 229, 229),
+                  fontFamily: GoogleFonts.merriweather().fontFamily,
+                  color: Color.fromARGB(221, 17, 17, 17),
                   fontSize: 14)),
           flex: 7,
         ),
@@ -42,7 +44,10 @@ class _PositionStringState extends State<PositionString> {
                   //     .count
                   //     .toString(),
                   style: TextStyle(
-                      color: Color.fromARGB(255, 229, 229, 229), fontSize: 14),
+                      color: Color.fromARGB(225, 28, 28, 28),
+                      fontFamily: GoogleFonts.merriweather().fontFamily,
+                      fontWeight: FontWeight.normal,
+                      fontSize: 14),
                 ),
                 Text(
                   ' x ',
@@ -52,7 +57,10 @@ class _PositionStringState extends State<PositionString> {
                   //     .count
                   //     .toString(),
                   style: TextStyle(
-                      color: Color.fromARGB(255, 229, 229, 229), fontSize: 14),
+                      color: Color.fromARGB(216, 29, 29, 29),
+                      fontFamily: GoogleFonts.merriweather().fontFamily,
+                      fontWeight: FontWeight.normal,
+                      fontSize: 14),
                 ),
                 Text(
                   '${widget.positionDbModel.cost!.toInt()}₽',
@@ -60,7 +68,10 @@ class _PositionStringState extends State<PositionString> {
                   // '${state.positions![index].allCost!.toInt()} ₽',
                   textAlign: TextAlign.right,
                   style: TextStyle(
-                      color: Color.fromARGB(255, 229, 229, 229), fontSize: 14),
+                      fontWeight: FontWeight.normal,
+                      fontFamily: GoogleFonts.merriweather().fontFamily,
+                      color: Color.fromARGB(220, 37, 37, 37),
+                      fontSize: 14),
                 ),
               ],
             ),

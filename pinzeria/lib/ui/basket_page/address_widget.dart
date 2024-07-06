@@ -118,10 +118,10 @@ class _AddressWidgetState extends State<AddressWidget> {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               gradient: LinearGradient(colors: [
-                Color.fromARGB(221, 249, 247, 231),
-                Color.fromARGB(221, 236, 234, 214),
-                Color.fromARGB(221, 245, 242, 212),
-                Color.fromARGB(221, 202, 201, 187),
+                Color.fromARGB(255, 236, 231, 226),
+                Color.fromARGB(255, 247, 242, 238),
+                Color.fromARGB(255, 243, 241, 240),
+                Color.fromARGB(255, 247, 242, 238),
               ])),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

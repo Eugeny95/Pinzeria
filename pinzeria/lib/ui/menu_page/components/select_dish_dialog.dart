@@ -82,9 +82,9 @@ class SelectDishDialogState extends State<SelectDishDialog> {
     double fontSize = width / 25;
     //
     return AlertDialog(
-        contentPadding: EdgeInsets.all(10),
+        contentPadding: EdgeInsets.all(1),
         insetPadding: const EdgeInsets.all(20),
-        backgroundColor: Color.fromARGB(255, 236, 234, 214),
+        backgroundColor: Color.fromARGB(255, 231, 230, 225),
         actionsAlignment: MainAxisAlignment.start,
         content: SizedBox(
           //  height: height * 0.9,
@@ -99,15 +99,20 @@ class SelectDishDialogState extends State<SelectDishDialog> {
                       swipeDismissible: true, doubleTapZoomable: true);
                 },
                 child: Container(
-                  height: height / 3.5,
+                  height: height / 2.75,
                   decoration: BoxDecoration(
-                      color: Colors.black54,
+                      color: Color.fromARGB(0, 0, 0, 0),
                       border: Border.all(
-                          width: 1,
-                          color: const Color.fromARGB(211, 45, 45, 45)),
-                      borderRadius: BorderRadius.circular(20.0)),
+                          width: 1, color: Color.fromARGB(10, 45, 45, 45)),
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(20),
+                        topLeft: Radius.circular(20),
+                      )),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20.0),
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      topLeft: Radius.circular(20),
+                    ),
                     child: CachedNetworkImage(
                         imageUrl: (dishHttpModel.imageLinks.isEmpty)
                             ? ''

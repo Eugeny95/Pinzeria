@@ -1,6 +1,7 @@
 import 'package:data_layer/models/db_models/history_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:pinzeria/ui/constants.dart';
 import 'package:pinzeria/ui/store_page/components/position_string.dart';
@@ -39,7 +40,7 @@ class _HistoryPreviewState extends State<HistoryPreview> {
                   bottomRight: Radius.circular(15),
                   bottomLeft: Radius.circular(15))),
           elevation: 20,
-          color: Color.fromARGB(205, 140, 116, 71),
+          color: Color.fromARGB(205, 252, 240, 216),
           child: Column(children: [
             SizedBox(
               height: height * 0.003,
@@ -80,7 +81,9 @@ class _HistoryPreviewState extends State<HistoryPreview> {
 
                                   style: TextStyle(
                                       color: Color.fromARGB(232, 50, 50, 50),
-                                      fontSize: 22,
+                                      fontFamily:
+                                          GoogleFonts.merriweather().fontFamily,
+                                      fontSize: 20,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ],
@@ -99,7 +102,9 @@ class _HistoryPreviewState extends State<HistoryPreview> {
                               style: TextStyle(
                                   color: Color.fromARGB(232, 50, 50, 50),
                                   fontSize: 16,
-                                  fontWeight: FontWeight.bold),
+                                  fontFamily:
+                                      GoogleFonts.merriweather().fontFamily,
+                                  fontWeight: FontWeight.normal),
                             ),
                           ],
                         ),
@@ -136,9 +141,9 @@ class _HistoryPreviewState extends State<HistoryPreview> {
                       child: Container(
                         decoration: const BoxDecoration(
                             gradient: LinearGradient(colors: [
-                          Color.fromARGB(0, 255, 255, 255),
-                          Color.fromARGB(220, 255, 255, 255),
-                          Color.fromARGB(0, 255, 255, 255),
+                          Color.fromARGB(0, 0, 0, 0),
+                          Color.fromARGB(134, 31, 31, 31),
+                          Color.fromARGB(0, 0, 0, 0),
                         ])),
                       ),
                     ),
@@ -151,9 +156,11 @@ class _HistoryPreviewState extends State<HistoryPreview> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text('Итого:',
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 245, 245, 245),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily:
+                                      GoogleFonts.merriweather().fontFamily,
+                                  color: Color.fromARGB(211, 35, 35, 35),
                                   fontSize: 16)),
                           SizedBox(width: width * 0.03),
                           Text(
@@ -162,8 +169,10 @@ class _HistoryPreviewState extends State<HistoryPreview> {
                             // '${state.positions![index].allCost!.toInt()} ₽',
                             textAlign: TextAlign.right,
                             style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Color.fromARGB(255, 229, 229, 229),
+                                fontWeight: FontWeight.normal,
+                                fontFamily:
+                                    GoogleFonts.merriweather().fontFamily,
+                                color: Color.fromARGB(226, 25, 25, 25),
                                 fontSize: 16),
                           ),
                         ],

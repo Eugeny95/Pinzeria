@@ -14,6 +14,7 @@ class SocialNetworkWidget extends StatelessWidget {
     return Column(
       children: [
         Container(
+          padding: EdgeInsets.all(7),
           decoration: BoxDecoration(
             color: kPrimaryColor,
             borderRadius: BorderRadius.circular(20),
@@ -27,108 +28,104 @@ class SocialNetworkWidget extends StatelessWidget {
             ],
           ),
           width: width * 0.7,
-          height: height * 0.11,
-          child: Column(
-            children: [
-              Text(
-                'Мы в соцсетях',
-                style: TextStyle(
-                    fontFamily: GoogleFonts.merriweather().fontFamily,
-                    color: Color.fromARGB(207, 34, 34, 34),
-                    fontSize: 14),
-              ),
-              SizedBox(height: height * 0.01),
-              Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: kFourthColor.withOpacity(0.8),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            // <-- Radius
-                          ),
-                          padding: EdgeInsets.all(2),
-                          elevation: 5,
-                          minimumSize: Size(height * 0.06, width * 0.13),
-                        ),
-                        onPressed: () async {
-                          final url = "https://vk.com/pinzeriavrn";
-                          if (await canLaunch(url)) {
-                            await launch(
-                              url,
-                            );
-                          }
-                        },
-                        clipBehavior: Clip.antiAlias,
-                        child: Container(
-                          child: Image.asset(
-                            "assets/VK.png",
-                            width: width * 0.12,
-                            fit: BoxFit.cover,
-                          ),
-                        )),
+          // height: height * 0.11,
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Наши соцсети',
+                  style: TextStyle(
+                      fontFamily: GoogleFonts.merriweather().fontFamily,
+                      color: Color.fromARGB(187, 34, 34, 34),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14),
+                ),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: kFourthColor.withOpacity(0.8),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        // <-- Radius
+                      ),
+                      padding: EdgeInsets.all(2),
+                      elevation: 5,
+                      minimumSize: Size(height * 0.06, width * 0.13),
+                    ),
+                    onPressed: () async {
+                      final url = "https://vk.com/pinzeriavrn";
+                      if (await canLaunch(url)) {
+                        await launch(
+                          url,
+                        );
+                      }
+                    },
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      child: Image.asset(
+                        "assets/VK.png",
+                        width: width * 0.12,
+                        fit: BoxFit.cover,
+                      ),
+                    )),
 
-                    // Padding(padding: EdgeInsets.only(left: 10)),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: kFourthColor.withOpacity(0.8),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            // <-- Radius
-                          ),
-                          padding: EdgeInsets.all(2),
-                          elevation: 5,
-                          minimumSize: Size(height * 0.06, width * 0.13),
-                        ),
-                        onPressed: () async {
-                          final url =
-                              "https://api.whatsapp.com/send/?phone=79515542002&text&type=phone_number&app_absent=0";
-                          if (await canLaunch(url)) {
-                            await launch(
-                              url,
-                            );
-                          }
-                        },
-                        clipBehavior: Clip.antiAlias,
-                        child: Container(
-                          child: Image.asset(
-                            "assets/WA.png",
-                            width: width * 0.08,
-                            fit: BoxFit.cover,
-                          ),
-                        )),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: kFourthColor.withOpacity(0.8),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            // <-- Radius
-                          ),
-                          padding: EdgeInsets.all(2),
-                          elevation: 5,
-                          minimumSize: Size(height * 0.06, width * 0.13),
-                        ),
-                        onPressed: () async {
-                          final url = "https://t.me/s/pinzeria_vrn";
-                          if (await canLaunch(url)) {
-                            await launch(
-                              url,
-                            );
-                          }
-                        },
-                        clipBehavior: Clip.antiAlias,
-                        child: Container(
-                          child: Image.asset(
-                            "assets/Telegram.png",
-                            width: width * 0.1,
-                            fit: BoxFit.cover,
-                          ),
-                        )),
-                  ]),
-            ],
-          ),
+                // Padding(padding: EdgeInsets.only(left: 10)),
+                // ElevatedButton(
+                //     style: ElevatedButton.styleFrom(
+                //       backgroundColor: kFourthColor.withOpacity(0.8),
+                //       shape: RoundedRectangleBorder(
+                //         borderRadius: BorderRadius.circular(12),
+                //         // <-- Radius
+                //       ),
+                //       padding: EdgeInsets.all(2),
+                //       elevation: 5,
+                //       minimumSize: Size(height * 0.06, width * 0.13),
+                //     ),
+                //     onPressed: () async {
+                //       final url =
+                //           "https://api.whatsapp.com/send/?phone=79515542002&text&type=phone_number&app_absent=0";
+                //       if (await canLaunch(url)) {
+                //         await launch(
+                //           url,
+                //         );
+                //       }
+                //     },
+                //     clipBehavior: Clip.antiAlias,
+                //     child: Container(
+                //       child: Image.asset(
+                //         "assets/WA.png",
+                //         width: width * 0.08,
+                //         fit: BoxFit.cover,
+                //       ),
+                // )),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: kFourthColor.withOpacity(0.8),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        // <-- Radius
+                      ),
+                      padding: EdgeInsets.all(2),
+                      elevation: 5,
+                      minimumSize: Size(height * 0.06, width * 0.13),
+                    ),
+                    onPressed: () async {
+                      final url = "https://t.me/s/pinzeria_vrn";
+                      if (await canLaunch(url)) {
+                        await launch(
+                          url,
+                        );
+                      }
+                    },
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      child: Image.asset(
+                        "assets/Telegram.png",
+                        width: width * 0.1,
+                        fit: BoxFit.cover,
+                      ),
+                    )),
+              ]),
         ),
       ],
     );

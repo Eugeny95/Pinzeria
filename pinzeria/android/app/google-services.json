@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "211659330915",
+    "project_id": "bontempi-40f35",
+    "storage_bucket": "bontempi-40f35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211659330915:android:999fb3c742d022f3682f56",
+        "android_client_info": {
+          "package_name": "com.pinzeria.bontempi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbE2JCvSAECsXnhFgaOGVLYE39jtPc8hk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
