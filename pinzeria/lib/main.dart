@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:pinzeria/PushNotificationService/cloud_message_controller.dart';
 import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
 import 'package:pinzeria/buisiness/basket_bloc/basket_bloc_bloc.dart';
 import 'package:pinzeria/buisiness/history_bloc/history_bloc.dart';
@@ -23,6 +24,8 @@ import 'ui/basket_page/basket_page.dart';
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  await CloudMessage.startCloudMessageService();
+  await CloudMessage.getDeviceToken();
   runApp(MyApp());
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

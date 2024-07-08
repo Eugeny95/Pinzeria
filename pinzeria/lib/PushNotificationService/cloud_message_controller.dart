@@ -1,10 +1,10 @@
 import 'dart:io';
-import 'package:awesome_notifications/awesome_notifications.dart';
 
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:google_api_availability/google_api_availability.dart';
-import 'package:push_notifications/PushNotificationService/firebase_cloud_message.dart';
-import 'package:push_notifications/PushNotificationService/huawei_cloud_message.dart';
+import 'package:pinzeria/PushNotificationService/firebase_cloud_message.dart';
+import 'package:pinzeria/PushNotificationService/huawei_cloud_message.dart';
 
 enum DeviceType {
   androidWithGoogleServices,

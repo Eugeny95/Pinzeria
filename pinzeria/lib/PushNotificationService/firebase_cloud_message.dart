@@ -1,18 +1,14 @@
 // import 'package:awesome_notifications/android_foreground_service.dart';
-import 'package:awesome_notifications/awesome_notifications.dart';
 
 // import 'package:chat/utils/LocalNotification/local_notification.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:push_notifications/PushNotificationService/remote_data.dart';
-import '../../firebase_options.dart';
+import 'package:pinzeria/firebase_options.dart';
 
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  // TODO: 
-
- 
+  // TODO:
 }
 
 Future<void> startFirebaseCloudMessageService() async {
