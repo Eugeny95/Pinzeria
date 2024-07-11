@@ -2,6 +2,7 @@ import 'package:auth_feature/data/auth_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
 import 'package:pinzeria/ui/auth_page/signin_or_signup_screen.dart';
 import 'package:pinzeria/ui/constants.dart';
@@ -24,7 +25,9 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
             backgroundColor: kPrimaryColor,
             title: Text('Политика конфиденциальности',
                 style: TextStyle(
-                    color: Color.fromARGB(201, 35, 35, 35), fontSize: 18))),
+                    color: Color.fromARGB(201, 35, 35, 35),
+                    fontSize: 18,
+                    fontFamily: GoogleFonts.merriweather().fontFamily))),
         body: Center(
           child: Container(
             width: width * 0.9,

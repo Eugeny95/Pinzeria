@@ -79,17 +79,17 @@ class _MenuPageState extends State<MenuPage> {
         label: Column(
           children: [
             Text(
-              'Забронировать',
-              style: TextStyle(fontSize: 10),
+              'Забронивать',
+              style: TextStyle(fontSize: 12),
             ),
             Text(
               'столик',
-              style: TextStyle(fontSize: 10),
+              style: TextStyle(fontSize: 12),
             ),
           ],
         ),
         icon: Icon(Icons.table_bar),
-        backgroundColor: kPrimaryColor.withOpacity(0.85),
+        backgroundColor: kPrimaryColor.withOpacity(0.95),
         onPressed: () {
           showDialog(
             context: context,
@@ -109,7 +109,7 @@ class _MenuPageState extends State<MenuPage> {
         //   ],
         // ),
         shape: RoundedRectangleBorder(
-            side: BorderSide(width: 1, color: Color.fromARGB(68, 23, 23, 23)),
+            side: BorderSide(width: 2, color: Color.fromARGB(142, 23, 23, 23)),
             borderRadius: BorderRadius.circular(10)),
       ),
       body: Container(

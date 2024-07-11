@@ -24,7 +24,10 @@ class _AboutRestaurantPageState extends State<AboutRestaurantPage> {
           backgroundColor: kPrimaryColor,
           title: Text('О ресторане',
               style: TextStyle(
-                  color: Color.fromARGB(201, 67, 67, 67), fontSize: 18))),
+                color: Color.fromARGB(201, 67, 67, 67),
+                fontSize: 18,
+                fontFamily: GoogleFonts.merriweather().fontFamily,
+              ))),
       body: Center(
         child: Container(
           width: width * 0.9,

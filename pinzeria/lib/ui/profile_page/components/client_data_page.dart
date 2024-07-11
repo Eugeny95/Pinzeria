@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
 import 'package:pinzeria/ui/auth_page/signin_or_signup_screen.dart';
@@ -27,7 +28,10 @@ class _ClientDataPageState extends State<ClientDataPage> {
           backgroundColor: kPrimaryColor,
           title: Text('Данные пользователя',
               style: TextStyle(
-                  color: Color.fromARGB(221, 51, 51, 51), fontSize: 18))),
+                color: Color.fromARGB(221, 51, 51, 51),
+                fontSize: 18,
+                fontFamily: GoogleFonts.merriweather().fontFamily,
+              ))),
       body: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           print('users firstname = ${state.user!.first_name}');
@@ -108,7 +112,11 @@ class _ClientDataPageState extends State<ClientDataPage> {
                             SizedBox(width: width * 0.05),
                             Text(
                               state.user!.first_name,
-                              style: TextStyle(fontSize: 17),
+                              style: TextStyle(
+                                fontSize: 17,
+                                fontFamily:
+                                    GoogleFonts.merriweather().fontFamily,
+                              ),
                             ),
                           ],
                         ),
@@ -131,7 +139,11 @@ class _ClientDataPageState extends State<ClientDataPage> {
                             SizedBox(width: width * 0.05),
                             Text(
                               state.user!.last_name,
-                              style: TextStyle(fontSize: 17),
+                              style: TextStyle(
+                                fontSize: 17,
+                                fontFamily:
+                                    GoogleFonts.merriweather().fontFamily,
+                              ),
                             ),
                           ],
                         ),
@@ -154,7 +166,11 @@ class _ClientDataPageState extends State<ClientDataPage> {
                             SizedBox(width: width * 0.05),
                             Text(
                               state.user!.username,
-                              style: TextStyle(fontSize: 17),
+                              style: TextStyle(
+                                fontSize: 17,
+                                fontFamily:
+                                    GoogleFonts.merriweather().fontFamily,
+                              ),
                             ),
                           ],
                         ),
@@ -181,7 +197,11 @@ class _ClientDataPageState extends State<ClientDataPage> {
                             Text(
                               DateFormat('dd.MM.yyyy')
                                   .format(state.user!.date_birth),
-                              style: TextStyle(fontSize: 17),
+                              style: TextStyle(
+                                fontSize: 17,
+                                fontFamily:
+                                    GoogleFonts.merriweather().fontFamily,
+                              ),
                             ),
                           ],
                         ),
@@ -204,7 +224,11 @@ class _ClientDataPageState extends State<ClientDataPage> {
                             SizedBox(width: width * 0.05),
                             Text(
                               state.user!.email,
-                              style: TextStyle(fontSize: 17),
+                              style: TextStyle(
+                                fontSize: 17,
+                                fontFamily:
+                                    GoogleFonts.merriweather().fontFamily,
+                              ),
                             ),
                           ],
                         ),

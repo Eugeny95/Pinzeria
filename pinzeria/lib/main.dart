@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -26,6 +27,26 @@ void main() async {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await CloudMessage.startCloudMessageService();
   await CloudMessage.getDeviceToken();
+  String? token = await CloudMessage.getDeviceToken();
+  print('This is Token: ' '${token}');
+  // You may set the permission requests to "provisional" which allows the user to choose what type
+// of notifications they would like to receive once the user receives a notification.
+//   final notificationSettings =
+//       await FirebaseMessaging.instance.requestPermission(provisional: true);
+
+// // For apple platforms, ensure the APNS token is available before making any FCM plugin API calls
+//   final apnsToken = await FirebaseMessaging.instance.getAPNSToken();
+//   print('This is Token: ' '${apnsToken}');
+//   if (apnsToken != null) {
+//     print('sosat');
+//     // APNS token is available, make FCM plugin API requests...
+//   }
+  // await Future.delayed(const Duration(seconds: 3));
+  // String? token = await FirebaseMessaging.instance.getAPNSToken();
+  // await FirebaseMessaging.instance.getToken().then((token) {
+  //   print('This is Token: ' '${token}');
+  // });
+
   runApp(MyApp());
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

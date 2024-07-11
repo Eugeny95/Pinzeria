@@ -8,6 +8,7 @@ import FirebaseCore
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
+    Thread.sleep(forTimeInterval: 2)
       FirebaseApp.configure()
       
     GeneratedPluginRegistrant.register(with: self)

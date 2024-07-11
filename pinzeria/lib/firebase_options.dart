@@ -65,4 +65,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'bontempi-40f35.appspot.com',
     iosBundleId: 'com.pinzeria.bontempi',
   );
+
 }

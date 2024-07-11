@@ -32,12 +32,12 @@ class AboutWidget extends StatelessWidget {
                   height: height * 0.02,
                 ),
                 Text(
-                  '  Семейный ресторан авторской \n         итальянской кухни в Воронеже',
+                  '  Семейный ресторан авторской \n       итальянской кухни в Воронеже',
                   style: TextStyle(
                       fontFamily: GoogleFonts.merriweather().fontFamily,
                       color: Colors.white,
-                      fontSize: 19,
-                      height: 0.95,
+                      fontSize: height * 0.021,
+                      height: 0.99,
                       fontWeight: FontWeight.w400),
                 ),
                 Row(

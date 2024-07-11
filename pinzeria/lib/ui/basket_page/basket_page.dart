@@ -35,6 +35,7 @@ String phone = '';
 
 class BasketPageState extends State<BasketPage> {
   TextEditingController dateCtl = TextEditingController();
+  bool _bonuce = false;
   int counter = 1;
   int toggleIndex = 0;
   DateTime completeBefore = DateTime.now().add(Duration(minutes: 16));
@@ -519,7 +520,7 @@ class BasketPageState extends State<BasketPage> {
                                                             ),
                                                             Container(
                                                               height:
-                                                                  height * 0.3,
+                                                                  height * 0.25,
                                                               child:
                                                                   CupertinoDatePicker(
                                                                 use24hFormat:
@@ -554,8 +555,59 @@ class BasketPageState extends State<BasketPage> {
                                                             ),
                                                             SizedBox(
                                                               height:
-                                                                  height * 0.03,
-                                                            )
+                                                                  height * 0.01,
+                                                            ),
+                                                            Row(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                ElevatedButton(
+                                                                  style: ElevatedButton
+                                                                      .styleFrom(
+                                                                    shape:
+                                                                        RoundedRectangleBorder(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              12), // <-- Radius
+                                                                    ),
+                                                                    elevation:
+                                                                        5,
+                                                                    minimumSize: Size(
+                                                                        height *
+                                                                            0.43,
+                                                                        width *
+                                                                            0.13),
+                                                                    backgroundColor:
+                                                                        kFourthColor,
+                                                                  ),
+                                                                  child: Text(
+                                                                      'Ближайшее время',
+                                                                      style: (TextStyle(
+                                                                          fontSize:
+                                                                              15,
+                                                                          color: Color.fromARGB(
+                                                                              235,
+                                                                              227,
+                                                                              227,
+                                                                              227)))),
+                                                                  onPressed:
+                                                                      () async {
+                                                                    // completeBefore = DateTime
+                                                                    //         .now()
+                                                                    //     .add(Duration(
+                                                                    //         minutes:
+                                                                    //             20));
+                                                                    Navigator.pop(
+                                                                        context);
+                                                                  },
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            SizedBox(
+                                                              height:
+                                                                  height * 0.01,
+                                                            ),
                                                           ],
                                                         ));
                                                   }) ??
@@ -571,7 +623,7 @@ class BasketPageState extends State<BasketPage> {
                                     padding:
                                         EdgeInsets.only(top: height * 0.025)),
                                 SizedBox(
-                                  // width: ,
+                                  width: width * 0.95,
                                   child: TextFormField(
                                     keyboardType: TextInputType.multiline,
                                     maxLines: 5,
@@ -615,6 +667,66 @@ class BasketPageState extends State<BasketPage> {
                                             fontSize: 12,
                                             color: Color.fromARGB(
                                                 205, 32, 32, 32))),
+                                  ),
+                                ),
+                                Padding(
+                                    padding:
+                                        EdgeInsets.only(top: height * 0.02)),
+                                SizedBox(
+                                  width: width * 0.9,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text('Доступно:  ',
+                                              style: TextStyle(
+                                                fontSize: 14,
+                                                color: Color.fromARGB(
+                                                    201, 20, 20, 20),
+                                                fontFamily:
+                                                    GoogleFonts.merriweather()
+                                                        .fontFamily,
+                                              )),
+                                          Text('35 бонусов',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 14,
+                                                color: Color.fromARGB(
+                                                    201, 20, 20, 20),
+                                                fontFamily:
+                                                    GoogleFonts.merriweather()
+                                                        .fontFamily,
+                                              )),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text('Списать ',
+                                              style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.normal,
+                                                color: Color.fromARGB(
+                                                    201, 20, 20, 20),
+                                                fontFamily:
+                                                    GoogleFonts.merriweather()
+                                                        .fontFamily,
+                                              )),
+                                          Switch.adaptive(
+                                              value: _bonuce,
+                                              onChanged: (newValue) async {
+                                                // AppParams appParams =
+                                                //     await AppSettings().getAppParams();
+                                                // appParams.enableNotification = newValue;
+                                                // await AppSettings()
+                                                //     .setAppParams(appParams: appParams);
+                                                setState(
+                                                    () => _bonuce = newValue);
+                                              }),
+                                        ],
+                                      ),
+                                    ],
                                   ),
                                 ),
                                 Padding(
@@ -691,6 +803,9 @@ class BasketPageState extends State<BasketPage> {
                                     ),
                                   ],
                                 ),
+                                Padding(
+                                    padding:
+                                        EdgeInsets.only(top: height * 0.01)),
                               ],
                             )))),
               ],
