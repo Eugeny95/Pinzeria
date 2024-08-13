@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:auth_feature/data/auth_data.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -94,23 +97,29 @@ class MyApp extends StatelessWidget {
             return menuBloc;
           }),
           BlocProvider(create: (context) {
-            BasketBloc basketBloc = BasketBloc();
-
-            return basketBloc;
-          }),
-          BlocProvider(create: (context) {
             return SelectCategoryBloc();
           }),
           BlocProvider(
               lazy: false,
               create: (context) {
                 AuthBloc authBloc = AuthBloc();
-                authBloc.init();
+
                 authBloc.add(GetUserEvent());
                 return authBloc;
               }),
         ],
-        child: MainScreen(),
+        child: BlocProvider(
+          create: (context) => BasketBloc(
+              accessToken: BlocProvider.of<AuthBloc>(context).getAccessToken()),
+          child: BlocListener<AuthBloc, AuthState>(
+            listener: (context, state) {
+              log('acc ${state.user!.first_name}');
+              BlocProvider.of<BasketBloc>(context).accessToken =
+                  state.user!.accessToken;
+            },
+            child: MainScreen(),
+          ),
+        ),
       ),
     );
   }

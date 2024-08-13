@@ -41,6 +41,7 @@ class BasketPageState extends State<BasketPage> {
   DateTime completeBefore = DateTime.now().add(Duration(minutes: 16));
   String comment = '';
   double totalCost = 0;
+  bool useBonuses = false;
   AddressData addressData = AddressData(
       deliveryCost: 0,
       street: '',
@@ -76,7 +77,9 @@ class BasketPageState extends State<BasketPage> {
               'http://147.45.109.158:8881/static/payment/payment_cancel.html');
       // Оплата
       PaymentObject paymentObject = await sberAquiring.toPay(
-          amount: (BlocProvider.of<BasketBloc>(context).getTotalCost() * 100)
+          amount: ((await BlocProvider.of<BasketBloc>(context)
+                      .calculateTotalSum(useBonuses)) *
+                  100)
               .toInt(),
           orderNumber: Acquiring.getRandom(30));
       PaymentStatus? paymentStatus = await Navigator.push(
@@ -148,7 +151,8 @@ class BasketPageState extends State<BasketPage> {
     }
     HistoryDbModel historyDbModel = HistoryDbModel(
         date_time: DateTime.now(),
-        totalcost: BlocProvider.of<BasketBloc>(context).getTotalCost(),
+        totalcost: await BlocProvider.of<BasketBloc>(context)
+            .calculateTotalSum(useBonuses),
         positions: listPositionDbModel);
     BlocProvider.of<HistoryBloc>(context)
         .add(AddHistoryOrder(historyDbModel: historyDbModel));
@@ -678,27 +682,58 @@ class BasketPageState extends State<BasketPage> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Row(
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
-                                          Text('Доступно:  ',
-                                              style: TextStyle(
-                                                fontSize: 14,
-                                                color: Color.fromARGB(
-                                                    201, 20, 20, 20),
-                                                fontFamily:
-                                                    GoogleFonts.merriweather()
+                                          Row(
+                                            children: [
+                                              Text('Доступно:  ',
+                                                  style: TextStyle(
+                                                    fontSize: 14,
+                                                    color: Color.fromARGB(
+                                                        201, 20, 20, 20),
+                                                    fontFamily: GoogleFonts
+                                                            .merriweather()
                                                         .fontFamily,
-                                              )),
-                                          Text('35 бонусов',
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 14,
-                                                color: Color.fromARGB(
-                                                    201, 20, 20, 20),
-                                                fontFamily:
-                                                    GoogleFonts.merriweather()
+                                                  )),
+                                              Text(
+                                                  '${state.availableBonuses.toInt()} бонусов',
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 14,
+                                                    color: Color.fromARGB(
+                                                        201, 20, 20, 20),
+                                                    fontFamily: GoogleFonts
+                                                            .merriweather()
                                                         .fontFamily,
-                                              )),
+                                                  )),
+                                            ],
+                                          ),
+                                          Row(
+                                            children: [
+                                              Text('К списанию:  ',
+                                                  style: TextStyle(
+                                                    fontSize: 14,
+                                                    color: Color.fromARGB(
+                                                        201, 20, 20, 20),
+                                                    fontFamily: GoogleFonts
+                                                            .merriweather()
+                                                        .fontFamily,
+                                                  )),
+                                              Text(
+                                                  '${state.availableBonuses.toInt()} бонусов',
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 14,
+                                                    color: Color.fromARGB(
+                                                        201, 20, 20, 20),
+                                                    fontFamily: GoogleFonts
+                                                            .merriweather()
+                                                        .fontFamily,
+                                                  )),
+                                            ],
+                                          ),
                                         ],
                                       ),
                                       Row(
@@ -714,15 +749,16 @@ class BasketPageState extends State<BasketPage> {
                                                         .fontFamily,
                                               )),
                                           Switch.adaptive(
-                                              value: _bonuce,
+                                              value: useBonuses,
                                               onChanged: (newValue) async {
-                                                // AppParams appParams =
-                                                //     await AppSettings().getAppParams();
-                                                // appParams.enableNotification = newValue;
-                                                // await AppSettings()
-                                                //     .setAppParams(appParams: appParams);
-                                                setState(
-                                                    () => _bonuce = newValue);
+                                                useBonuses = newValue;
+                                                BlocProvider.of<BasketBloc>(
+                                                        context)
+                                                    .add(SetBonusesUse(
+                                                        useBonuses:
+                                                            useBonuses));
+
+                                                setState(() {});
                                               }),
                                         ],
                                       ),

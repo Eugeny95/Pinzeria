@@ -44,10 +44,10 @@ Future<UserData> loginInServer(
 
   try {
     Response response = await Dio().post(authUrl,
-        // data: {
-        //   'message_service_token': message_service_token ?? '',
-        //   'device_type': deviceType ?? '',
-        // },
+        data: {
+          'message_service_token': message_service_token ?? '',
+          'device_type': deviceType ?? '',
+        },
         options: Options(
             //receiveDataWhenStatusError: true,
             headers: <String, String>{

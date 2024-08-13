@@ -33,7 +33,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     return authStatus;
   }
 
-  void init() async {
+  Future<void> init() async {
     authStatus = await authService.logIn(
         username: '',
         password: '',
@@ -71,6 +71,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
 
     on<GetUserEvent>((event, emit) async {
+      await init();
       if (isAuth()) {
         emit(AuthState(status: authStatus, user: authService.user));
       } else {
