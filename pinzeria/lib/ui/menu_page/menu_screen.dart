@@ -80,11 +80,11 @@ class _MenuPageState extends State<MenuPage> {
           children: [
             Text(
               'Забронивать',
-              style: TextStyle(fontSize: 12),
+              style: TextStyle(fontSize: height * 0.012),
             ),
             Text(
               'столик',
-              style: TextStyle(fontSize: 12),
+              style: TextStyle(fontSize: height * 0.012),
             ),
           ],
         ),
@@ -109,7 +109,7 @@ class _MenuPageState extends State<MenuPage> {
         //   ],
         // ),
         shape: RoundedRectangleBorder(
-            side: BorderSide(width: 2, color: Color.fromARGB(142, 23, 23, 23)),
+            side: BorderSide(width: 1, color: Color.fromARGB(96, 23, 23, 23)),
             borderRadius: BorderRadius.circular(10)),
       ),
       body: Container(

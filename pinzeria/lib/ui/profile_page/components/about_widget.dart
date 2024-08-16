@@ -118,7 +118,7 @@ class AboutWidget extends StatelessWidget {
                       child: Text(
                         'Время работы ресторана   ',
                         style: TextStyle(
-                          fontSize: 13,
+                          fontSize: 12,
                           color: Colors.white,
                           fontFamily: GoogleFonts.merriweather().fontFamily,
                         ),
@@ -127,7 +127,7 @@ class AboutWidget extends StatelessWidget {
                     ),
                     Icon(
                       Icons.arrow_right_alt_outlined,
-                      size: 22,
+                      size: 25,
                       color: Colors.white,
                     ),
                   ],

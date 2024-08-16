@@ -166,14 +166,14 @@ class PaymentWidgetState extends State<PaymentWidgetBottom> {
                             paymentType: PaymentType.CardUponReceipt));
                     break;
                   }
-                case (2):
-                  {
-                    Navigator.pop(
-                        context,
-                        SelectedPaymentType(
-                            paymentType: PaymentType.CardOnline));
-                    break;
-                  }
+                // case (2):
+                //   {
+                //     Navigator.pop(
+                //         context,
+                //         SelectedPaymentType(
+                //             paymentType: PaymentType.CardOnline));
+                //     break;
+                // }
               }
             },
           ),

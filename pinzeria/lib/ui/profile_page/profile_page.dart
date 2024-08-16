@@ -192,7 +192,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     ),
                                     child: Center(
                                       child: Text(
-                                        "Карта доставки",
+                                        "Бонусная система",
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             fontFamily: 'Moniqa',
