@@ -698,7 +698,7 @@ class BasketPageState extends State<BasketPage> {
                                                         .fontFamily,
                                                   )),
                                               Text(
-                                                  '${state.availableBonuses.toInt()} бонусов',
+                                                  '${state.bonusesBalance.toInt()} бонусов',
                                                   style: TextStyle(
                                                     fontWeight: FontWeight.bold,
                                                     fontSize: 14,

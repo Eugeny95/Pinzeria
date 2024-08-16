@@ -42,6 +42,7 @@ class BasketBloc extends Bloc<BasketEvent, BasketState> {
       availibleBonuces = 0.0;
     }
     totalCost = totalCost - availibleBonuces;
+    log('Bonuses balance = $bonusesBalance');
 
     return totalCost;
   }

@@ -9,10 +9,11 @@ class BonusesRepository {
           options: Options(headers: <String, String>{
             'authorization': 'Bearer ${accessToken.toString()}'
           }));
-
-      double balance = double.parse(responce.data['Баланс бонусных баллов']);
+      log(responce.data.toString());
+      double balance = responce.data['Баланс бонусных баллов'];
       return balance;
     } catch (_) {
+      log('Exception in getBonusesBalance $_');
       return 0.0;
     }
   }
@@ -26,7 +27,7 @@ class BonusesRepository {
             'authorization': 'Bearer ${accessToken}'
           }));
 
-      return responce.data['Можно списать бонусов'];
+      return double.parse(responce.data['Можно списать бонусов'].toString());
     } catch (_) {
       log('error ${_}');
       return 0.0;
