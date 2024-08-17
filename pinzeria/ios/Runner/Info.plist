@@ -37,6 +37,8 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<string>com.pinzeria.bontempi</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
