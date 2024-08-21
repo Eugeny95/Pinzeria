@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 import 'package:intl/intl.dart';
+import 'package:pinzeria/PushNotificationService/cloud_message_controller.dart';
 import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
 import 'package:pinzeria/ui/constants.dart';
 
@@ -422,6 +423,10 @@ class RegisterDialogState extends State<RegisterDialog> {
                           userData.email = email;
                           userData.password = password;
                           userData.date_birth = date_birth;
+                          userData.deviceType =
+                              await CloudMessage.getDeviceTypeStr();
+                          userData.messageServiceToken =
+                              (await CloudMessage.getDeviceToken()) ?? '';
 
                           AuthStatus status =
                               await BlocProvider.of<AuthBloc>(context)

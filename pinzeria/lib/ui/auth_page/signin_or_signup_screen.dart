@@ -2,6 +2,7 @@ import 'package:auth_feature/data/auth_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pinzeria/PushNotificationService/cloud_message_controller.dart';
 import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
 import 'package:pinzeria/ui/auth_page/forget_password_dialog.dart';
 import 'package:pinzeria/ui/auth_page/register_dialog.dart';
@@ -189,7 +190,13 @@ class SigninOrSignupScreenState extends State<SigninOrSignupScreen> {
                                     await BlocProvider.of<AuthBloc>(context)
                                         .logIn(
                                             username: login,
-                                            password: password);
+                                            password: password,
+                                            cloudMessageToken:
+                                                (await CloudMessage
+                                                        .getDeviceToken()) ??
+                                                    '',
+                                            deviceType: await CloudMessage
+                                                .getDeviceTypeStr());
                                 switch (status) {
                                   case AuthStatus.authorized:
                                     {

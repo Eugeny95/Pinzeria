@@ -52,8 +52,8 @@ dependencies:
     path: ../data_layer
   yandex_autocomplete:
     path: ../yandex_autocomplete
-  online_payments:
-    path: ../online_payments
+  alfa_payment:
+    path: ../alfa_payment
 
   bloc: any
   flutter_bloc: any

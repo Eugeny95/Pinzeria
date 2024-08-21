@@ -23,12 +23,16 @@ class UserData {
   String first_name = '';
   String last_name = '';
   DateTime date_birth = DateTime.now();
+  String messageServiceToken = '';
+  String deviceType = '';
   String accessToken = '';
   AuthStatus authStatus = AuthStatus.unauthorized;
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'username': username,
+      'message_service_token': messageServiceToken,
+      'device_type': deviceType,
       'password': password,
       'email': email,
       'first_name': first_name,

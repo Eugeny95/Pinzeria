@@ -1,3 +1,5 @@
+import 'package:alfa_payment/acquiring.dart';
+import 'package:alfa_payment/payment_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:data_layer/models/db_models/history_model.dart';
 import 'package:data_layer/models/http_models/order_http_model.dart';
@@ -9,8 +11,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:online_payments/acquiring.dart';
-import 'package:online_payments/payment_widget.dart';
+
 import 'package:toggle_switch/toggle_switch.dart';
 import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
 import 'package:pinzeria/buisiness/basket_bloc/basket_bloc_bloc.dart';
@@ -66,28 +67,29 @@ class BasketPageState extends State<BasketPage> {
       },
     );
     if (paymentType.paymentType == PaymentType.CardOnline) {
-      SberAquiring sberAquiring = SberAquiring(
-          userName: 'p3662276447-api',
-          password: '9174253qQ@',
+      AlfaAquiring alfaAquiring = AlfaAquiring(
+          userName: 'valentino_vrn-api',
+          password: '9174253qQ@)',
           returnUrl:
               'http://147.45.109.158:8881/static/payment/payment_done.html',
-          token: 'q0dudue2frtnr8v1tpd5rv0udj',
+          token: 'eqmthfcf2ms5fi077d7afj2ohi',
           pageView: PageViewVariants.MOBILE,
           failUrl:
               'http://147.45.109.158:8881/static/payment/payment_cancel.html');
       // Оплата
-      PaymentObject paymentObject = await sberAquiring.toPay(
-          amount: ((await BlocProvider.of<BasketBloc>(context)
-                      .calculateTotalSum(useBonuses)) *
-                  100)
-              .toInt(),
+      PaymentObject paymentObject = await alfaAquiring.toPay(
+          amount: 100,
+          // amount: ((await BlocProvider.of<BasketBloc>(context)
+          //             .calculateTotalSum(useBonuses)) *
+          //         100)
+          //     .toInt(),
           orderNumber: Acquiring.getRandom(30));
       PaymentStatus? paymentStatus = await Navigator.push(
         context,
         MaterialPageRoute(
             builder: (context) => PaymentWidget(
                   paymentObject: paymentObject,
-                  sberAquiring: sberAquiring,
+                  alfaAquiring: alfaAquiring,
                 )),
       );
       if (paymentStatus == null) {

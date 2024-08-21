@@ -36,7 +36,7 @@ class AboutWidget extends StatelessWidget {
                   style: TextStyle(
                       fontFamily: GoogleFonts.merriweather().fontFamily,
                       color: Colors.white,
-                      fontSize: height * 0.021,
+                      fontSize: height * 0.02,
                       height: 0.99,
                       fontWeight: FontWeight.w400),
                 ),
@@ -64,7 +64,7 @@ class AboutWidget extends StatelessWidget {
                                       style: TextStyle(
                                           fontFamily: GoogleFonts.merriweather()
                                               .fontFamily,
-                                          fontSize: 14,
+                                          fontSize: height * 0.016,
                                           color: Colors.white),
                                     ),
                                     onTap: () async {
@@ -92,9 +92,10 @@ class AboutWidget extends StatelessWidget {
                                       child: Text(
                                         " +7 (473) 233-33-01",
                                         style: (TextStyle(
-                                            fontWeight: FontWeight.w800,
-                                            color: Colors.white,
-                                            fontSize: 14)),
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.white,
+                                          fontSize: height * 0.016,
+                                        )),
                                       ),
                                       onTap: () async {
                                         final url = "tel://+7(473)2333301";
@@ -118,7 +119,7 @@ class AboutWidget extends StatelessWidget {
                       child: Text(
                         'Время работы ресторана   ',
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: height * 0.012,
                           color: Colors.white,
                           fontFamily: GoogleFonts.merriweather().fontFamily,
                         ),
@@ -156,7 +157,7 @@ class AboutWidget extends StatelessWidget {
                     Text(
                       'Время работы ресторана:',
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: height * 0.015,
                         fontFamily: GoogleFonts.merriweather().fontFamily,
                         color: Colors.white,
                       ),
@@ -169,7 +170,7 @@ class AboutWidget extends StatelessWidget {
                         Text(
                           'Понедельник - Пятница',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: height * 0.012,
                             fontFamily: GoogleFonts.merriweather().fontFamily,
                             color: Colors.white,
                           ),
@@ -177,7 +178,7 @@ class AboutWidget extends StatelessWidget {
                         Text(
                           '12:00 - 00:00',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: height * 0.012,
                             fontFamily: GoogleFonts.merriweather().fontFamily,
                             color: Colors.white,
                           ),
@@ -186,7 +187,7 @@ class AboutWidget extends StatelessWidget {
                         Text(
                           'Суббота - Воскресенье',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: height * 0.012,
                             fontFamily: GoogleFonts.merriweather().fontFamily,
                             color: Colors.white,
                           ),
@@ -194,7 +195,7 @@ class AboutWidget extends StatelessWidget {
                         Text(
                           '11:00 - 00:00',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: height * 0.012,
                             fontFamily: GoogleFonts.merriweather().fontFamily,
                             color: Colors.white,
                           ),
@@ -222,7 +223,7 @@ class AboutWidget extends StatelessWidget {
                     Text(
                       'Время работы доставки:',
                       style: TextStyle(
-                        fontSize: 13,
+                        fontSize: height * 0.015,
                         fontFamily: GoogleFonts.merriweather().fontFamily,
                         color: Colors.white,
                       ),
@@ -235,7 +236,7 @@ class AboutWidget extends StatelessWidget {
                         Text(
                           'Понедельник - Воскресенье',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: height * 0.012,
                             fontFamily: GoogleFonts.merriweather().fontFamily,
                             color: Colors.white,
                           ),
@@ -243,7 +244,7 @@ class AboutWidget extends StatelessWidget {
                         Text(
                           '11:00 - 22:30',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: height * 0.012,
                             fontFamily: GoogleFonts.merriweather().fontFamily,
                             color: Colors.white,
                           ),

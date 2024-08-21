@@ -36,10 +36,11 @@ class SocialNetworkWidget extends StatelessWidget {
                 Text(
                   'Наши соцсети',
                   style: TextStyle(
-                      fontFamily: GoogleFonts.merriweather().fontFamily,
-                      color: Color.fromARGB(187, 34, 34, 34),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14),
+                    fontFamily: GoogleFonts.merriweather().fontFamily,
+                    color: Color.fromARGB(187, 34, 34, 34),
+                    fontWeight: FontWeight.bold,
+                    fontSize: height * 0.015,
+                  ),
                 ),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(

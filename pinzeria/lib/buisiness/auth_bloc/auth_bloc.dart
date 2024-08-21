@@ -15,10 +15,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   Future<AuthStatus> logIn(
-      {required String username, required String password}) async {
+      {required String username,
+      required String password,
+      required String cloudMessageToken,
+      required String deviceType}) async {
     authStatus = await authService.logIn(
-        cloudMessageToken: '',
-        deviceType: '',
+        cloudMessageToken: cloudMessageToken,
+        deviceType: deviceType,
         username: username,
         password: password,
         authUrl: 'http://147.45.109.158:8881/auth/login/');

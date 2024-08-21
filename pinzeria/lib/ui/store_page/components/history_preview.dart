@@ -40,7 +40,7 @@ class _HistoryPreviewState extends State<HistoryPreview> {
                   bottomRight: Radius.circular(15),
                   bottomLeft: Radius.circular(15))),
           elevation: 20,
-          color: Color.fromARGB(205, 252, 240, 216),
+          color: Color.fromARGB(255, 236, 222, 192),
           child: Column(children: [
             SizedBox(
               height: height * 0.003,
