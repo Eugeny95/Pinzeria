@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:alfa_payment/acquiring.dart';
 import 'package:alfa_payment/payment_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -11,6 +13,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:pinzeria/ui/basket_page/components/datetime2_page.dart';
 
 import 'package:toggle_switch/toggle_switch.dart';
 import 'package:pinzeria/buisiness/auth_bloc/auth_bloc.dart';
@@ -35,6 +38,11 @@ String mytime = '30 минут';
 String phone = '';
 
 class BasketPageState extends State<BasketPage> {
+  String formatDateTime(DateTime dateTime) {
+    // Форматируем дату и время без секунд
+    return '${dateTime.year}-${dateTime.month.toString().padLeft(2, '0')}-${dateTime.day.toString().padLeft(2, '0')} ${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}';
+  }
+
   TextEditingController dateCtl = TextEditingController();
   bool _bonuce = false;
   int counter = 1;
@@ -453,8 +461,11 @@ class BasketPageState extends State<BasketPage> {
                                   width: width * 0.9,
                                   height: height * 0.06,
                                   child: TextField(
+                                    showCursor: false,
+                                    readOnly: true,
+
                                     cursorColor:
-                                        Color.fromARGB(209, 41, 41, 41),
+                                        Color.fromARGB(209, 42, 42, 42),
                                     controller: dateCtl,
                                     // inputFormatters: <TextInputFormatter>[_dateFormatter],
                                     decoration: InputDecoration(
@@ -463,20 +474,26 @@ class BasketPageState extends State<BasketPage> {
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                             color:
-                                                Color.fromARGB(95, 46, 46, 46)),
+                                                Color.fromARGB(95, 38, 38, 38)),
                                       ),
                                       prefixIcon: const Icon(Icons.timelapse,
                                           size: 18,
                                           color:
-                                              Color.fromARGB(210, 234, 44, 44)),
+                                              Color.fromARGB(210, 39, 39, 39)),
                                       labelText: 'Как можно скорее',
                                       labelStyle: TextStyle(
+                                          fontFamily: GoogleFonts.merriweather()
+                                              .fontFamily,
                                           color:
-                                              Color.fromARGB(217, 49, 49, 49),
+                                              Color.fromARGB(217, 41, 41, 41),
                                           fontSize: 14),
                                       helperText: '      Выберите время',
                                       helperStyle: TextStyle(
-                                          color: Colors.black, fontSize: 12),
+                                          fontFamily: GoogleFonts.merriweather()
+                                              .fontFamily,
+                                          color:
+                                              Color.fromARGB(255, 26, 26, 26),
+                                          fontSize: 12),
                                       hintStyle: TextStyle(
                                           fontSize: 20.0,
                                           color: Colors.redAccent),
@@ -485,143 +502,25 @@ class BasketPageState extends State<BasketPage> {
                                       //  completeBefore = value;
                                     },
                                     onTap: () async {
-                                      DateTime date = DateTime.now();
-                                      FocusScope.of(context)
-                                          .requestFocus(new FocusNode());
-                                      completeBefore =
-                                          await showCupertinoModalPopup(
-                                                  context: context,
-                                                  builder:
-                                                      (BuildContext builder) {
-                                                    return Container(
-                                                        height: MediaQuery.of(
-                                                                    context)
-                                                                .copyWith()
-                                                                .size
-                                                                .height *
-                                                            0.4,
-                                                        color: const Color
-                                                            .fromARGB(
-                                                            255, 0, 0, 0),
-                                                        child: Column(
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .end,
-                                                          children: [
-                                                            TextButton(
-                                                              child: Text(
-                                                                  'Применить',
-                                                                  style: TextStyle(
-                                                                      color: Color.fromARGB(
-                                                                          219,
-                                                                          255,
-                                                                          255,
-                                                                          255),
-                                                                      fontSize:
-                                                                          14)),
-                                                              onPressed: () {
-                                                                Navigator.pop(
-                                                                    context);
-                                                              },
-                                                            ),
-                                                            Container(
-                                                              height:
-                                                                  height * 0.25,
-                                                              child:
-                                                                  CupertinoDatePicker(
-                                                                use24hFormat:
-                                                                    true,
-                                                                mode: CupertinoDatePickerMode
-                                                                    .dateAndTime,
-                                                                initialDateTime:
-                                                                    // DateTime
-                                                                    //     .now(),
-                                                                    DateTime.now().add(
-                                                                        Duration(
-                                                                            hours:
-                                                                                1)),
-                                                                minimumDate: DateTime
-                                                                        .now()
-                                                                    .add(Duration(
-                                                                        minutes:
-                                                                            20)),
-                                                                maximumDate: DateTime(
-                                                                    DateTime.now()
-                                                                        .year,
-                                                                    DateTime.now()
-                                                                            .month +
-                                                                        2,
-                                                                    DateTime.now()
-                                                                        .day),
-                                                                onDateTimeChanged:
-                                                                    (val) {
-                                                                  date = val;
-                                                                },
-                                                              ),
-                                                            ),
-                                                            SizedBox(
-                                                              height:
-                                                                  height * 0.01,
-                                                            ),
-                                                            Row(
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                ElevatedButton(
-                                                                  style: ElevatedButton
-                                                                      .styleFrom(
-                                                                    shape:
-                                                                        RoundedRectangleBorder(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              12), // <-- Radius
-                                                                    ),
-                                                                    elevation:
-                                                                        5,
-                                                                    minimumSize: Size(
-                                                                        height *
-                                                                            0.43,
-                                                                        width *
-                                                                            0.13),
-                                                                    backgroundColor:
-                                                                        kFourthColor,
-                                                                  ),
-                                                                  child: Text(
-                                                                      'Ближайшее время',
-                                                                      style: (TextStyle(
-                                                                          fontSize:
-                                                                              15,
-                                                                          color: Color.fromARGB(
-                                                                              235,
-                                                                              227,
-                                                                              227,
-                                                                              227)))),
-                                                                  onPressed:
-                                                                      () async {
-                                                                    // completeBefore = DateTime
-                                                                    //         .now()
-                                                                    //     .add(Duration(
-                                                                    //         minutes:
-                                                                    //             20));
-                                                                    Navigator.pop(
-                                                                        context);
-                                                                  },
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            SizedBox(
-                                                              height:
-                                                                  height * 0.01,
-                                                            ),
-                                                          ],
-                                                        ));
-                                                  }) ??
-                                              date;
+                                      Map<String, dynamic>? date =
+                                          await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                DateTime2Page()),
+                                      );
+                                      log(date.toString());
 
-                                      dateCtl.text =
-                                          DateFormat('dd.MM.yyyy HH:mm')
-                                              .format(completeBefore);
+                                      if (date != null) {
+                                        setState(() {
+                                          log(date['selectedDateTime']
+                                              .toString());
+                                          dateCtl.text = formatDateTime(
+                                              date['selectedDateTime']);
+                                          completeBefore =
+                                              date['selectedDateTime'];
+                                        });
+                                      }
                                     },
                                   ),
                                 ),
